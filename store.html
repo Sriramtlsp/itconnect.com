@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store - IT Connect | Laptop Parts & Accessories</title>
+    <meta name="description" content="Shop genuine laptop parts and accessories. RAM, SSD, batteries, screens, keyboards and more with warranty.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <h2><i class="fas fa-laptop"></i> IT CONNECT</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="index.html#services" class="nav-link">Services</a></li>
+                    <li><a href="store.html" class="nav-link active">Store</a></li>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                    <li><a href="index.html#blog" class="nav-link">Blog</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                    <li><a href="Diagnostics.html" class="nav-link">AI Diagnostics</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="login.html" class="btn btn-outline">
+                        <i class="fas fa-user"></i> Login
+                    </a>
+                    <div class="cart-icon">
+                        <a href="#" id="cartToggle">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
+                    <a href="tel:+9198847 45432" class="btn btn-primary">
+                        <i class="fas fa-phone"></i> Call Now
+                    </a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Store Hero -->
+    <section class="store-hero">
+        <div class="container">
+            <div class="store-hero-content">
+                <h1>Laptop Parts & Accessories Store</h1>
+                <p>Genuine parts with warranty. Fast delivery across Chennai.</p>
+                <div class="store-features">
+                    <div class="feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Genuine Parts</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-shipping-fast"></i>
+                        <span>Fast Delivery</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-tools"></i>
+                        <span>Free Installation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Categories -->
+    <section class="product-categories">
+        <div class="container">
+            <div class="section-header">
+                <h2>Shop by Category</h2>
+                <p>Find the right parts for your laptop</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card" data-category="all">
+                    <i class="fas fa-th-large"></i>
+                    <h3>All Products</h3>
+                </div>
+                <div class="category-card" data-category="memory">
+                    <i class="fas fa-memory"></i>
+                    <h3>RAM & Memory</h3>
+                </div>
+                <div class="category-card" data-category="storage">
+                    <i class="fas fa-hdd"></i>
+                    <h3>Storage (SSD/HDD)</h3>
+                </div>
+                <div class="category-card" data-category="screen">
+                    <i class="fas fa-desktop"></i>
+                    <h3>Screens</h3>
+                </div>
+                <div class="category-card" data-category="battery">
+                    <i class="fas fa-battery-full"></i>
+                    <h3>Batteries</h3>
+                </div>
+                <div class="category-card" data-category="keyboard">
+                    <i class="fas fa-keyboard"></i>
+                    <h3>Keyboards</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products">
+        <div class="container">
+            <div class="products-header">
+                <h2>Our Products</h2>
+                <div class="products-filter">
+                    <select id="sortProducts">
+                        <option value="name">Sort by Name</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="rating">Sort by Rating</option>
+                    </select>
+                </div>
+            </div>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="cart-close" id="cartClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be loaded here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: ₹<span id="cartTotal">0</span></strong>
+            </div>
+            <button class="btn btn-primary btn-lg" id="checkoutBtn">
+                <i class="fas fa-credit-card"></i> Proceed to Checkout
+            </button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-laptop"></i> IT Connect</h3>
+                    <p>Professional laptop repair services with home visits. Fast, reliable, and affordable solutions for all your laptop needs.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="store.html">Store</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Store Categories</h4>
+                    <ul>
+                        <li><a href="#" data-category="memory">RAM & Memory</a></li>
+                        <li><a href="#" data-category="storage">Storage</a></li>
+                        <li><a href="#" data-category="screen">Screens</a></li>
+                        <li><a href="#" data-category="battery">Batteries</a></li>
+                        <li><a href="#" data-category="keyboard">Keyboards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Coming Soon</h4>
+                    <ul>
+                        <li><a href="#" onclick="showNotification('Express Delivery: Same-day delivery for urgent repairs!', 'info')">Express Delivery <span class="coming-soon-badge"><i class="fas fa-clock"></i> Soon</span></a></li>
+                        <li><a href="#" onclick="showNotification('Bulk Orders: Special pricing for businesses and institutions!', 'info')">Bulk Orders <span class="coming-soon-badge"><i class="fas fa-clock"></i> Soon</span></a></li>
+                        <li><a href="#" onclick="showNotification('Warranty Tracker: Keep track of all your part warranties!', 'info')">Warranty Tracker <span class="coming-soon-badge"><i class="fas fa-clock"></i> Soon</span></a></li>
+                        <li><a href="#" onclick="showNotification('Installation Videos: Step-by-step guides for DIY installation!', 'info')">Installation Videos <span class="coming-soon-badge"><i class="fas fa-clock"></i> Soon</span></a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +91 9884745432</p>
+                        <p><i class="fas fa-envelope"></i> info@itconnect.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Chennai, Tamil Nadu</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 IT Connect. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/store.js"></script>
+    <script src="assets/js/live-chat.js"></script>
+</body>
+</html>

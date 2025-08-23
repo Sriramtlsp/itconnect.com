@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - IT Connect | Secure Payment</title>
+    <meta name="description" content="Complete your purchase securely with multiple payment options. Fast checkout for laptop parts and repair services.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <h2><i class="fas fa-laptop"></i> IT CONNECT</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="index.html#services" class="nav-link">Services</a></li>
+                    <li><a href="store.html" class="nav-link">Store</a></li>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                    <li><a href="index.html#blog" class="nav-link">Blog</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                    <li><a href="ai-diagnostics.html" class="nav-link">AI Diagnostics</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="login.html" class="btn btn-outline">
+                        <i class="fas fa-user"></i> Login
+                    </a>
+                    <div class="cart-icon">
+                        <a href="#" id="cartToggle">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
+                    <a href="tel:+9198847 45432" class="btn btn-primary">
+                        <i class="fas fa-phone"></i> Call Now
+                    </a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Checkout Hero -->
+    <section class="checkout-hero">
+        <div class="container">
+            <div class="checkout-hero-content">
+                <h1><i class="fas fa-shield-alt"></i> Secure Checkout</h1>
+                <p>Complete your purchase with confidence using our secure payment system</p>
+                <div class="security-badges">
+                    <div class="security-badge">
+                        <i class="fas fa-lock"></i>
+                        <span>SSL Encrypted</span>
+                    </div>
+                    <div class="security-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Secure Payment</span>
+                    </div>
+                    <div class="security-badge">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Multiple Options</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Checkout Process -->
+    <section class="checkout-process">
+        <div class="container">
+            <!-- Progress Steps -->
+            <div class="checkout-steps">
+                <div class="step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Cart Review</div>
+                </div>
+                <div class="step" data-step="2">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Shipping Info</div>
+                </div>
+                <div class="step" data-step="3">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Payment</div>
+                </div>
+                <div class="step" data-step="4">
+                    <div class="step-number">4</div>
+                    <div class="step-label">Confirmation</div>
+                </div>
+            </div>
+
+            <div class="checkout-container">
+                <!-- Main Checkout Content -->
+                <div class="checkout-main">
+                    <!-- Step 1: Cart Review -->
+                    <div class="checkout-step active" id="step-1">
+                        <div class="step-header">
+                            <h2><i class="fas fa-shopping-cart"></i> Review Your Order</h2>
+                            <p>Verify your items before proceeding to payment</p>
+                        </div>
+                        
+                        <div class="cart-review">
+                            <div class="cart-items-list" id="checkoutCartItems">
+                                <!-- Cart items will be loaded here -->
+                            </div>
+                            
+                            <div class="cart-actions">
+                                <a href="store.html" class="btn btn-outline">
+                                    <i class="fas fa-arrow-left"></i> Continue Shopping
+                                </a>
+                                <button class="btn btn-primary" onclick="nextStep(2)">
+                                    Proceed to Shipping <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Shipping Information -->
+                    <div class="checkout-step" id="step-2">
+                        <div class="step-header">
+                            <h2><i class="fas fa-truck"></i> Shipping Information</h2>
+                            <p>Enter your delivery details</p>
+                        </div>
+                        
+                        <form class="shipping-form" id="shippingForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="address">Street Address *</label>
+                                <input type="text" id="address" name="address" required>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">City *</label>
+                                    <input type="text" id="city" name="city" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="state">State *</label>
+                                    <select id="state" name="state" required>
+                                        <option value="">Select State</option>
+                                        <option value="TN">Tamil Nadu</option>
+                                        <option value="KA">Karnataka</option>
+                                        <option value="AP">Andhra Pradesh</option>
+                                        <option value="TS">Telangana</option>
+                                        <option value="KL">Kerala</option>
+                                        <option value="PY">Puducherry</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="pincode">PIN Code *</label>
+                                    <input type="text" id="pincode" name="pincode" pattern="[0-9]{6}" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="landmark">Landmark</label>
+                                    <input type="text" id="landmark" name="landmark">
+                                </div>
+                            </div>
+                            
+                            <div class="delivery-options">
+                                <h3><i class="fas fa-shipping-fast"></i> Delivery Options</h3>
+                                <div class="delivery-option">
+                                    <input type="radio" id="standard" name="delivery" value="standard" checked>
+                                    <label for="standard">
+                                        <div class="option-info">
+                                            <strong>Standard Delivery (3-5 days)</strong>
+                                            <span>Free delivery for orders above ₹2000</span>
+                                        </div>
+                                        <div class="option-price">₹150</div>
+                                    </label>
+                                </div>
+                                <div class="delivery-option">
+                                    <input type="radio" id="express" name="delivery" value="express">
+                                    <label for="express">
+                                        <div class="option-info">
+                                            <strong>Express Delivery (1-2 days)</strong>
+                                            <span>Fast delivery to your doorstep</span>
+                                        </div>
+                                        <div class="option-price">₹300</div>
+                                    </label>
+                                </div>
+                                <div class="delivery-option">
+                                    <input type="radio" id="sameday" name="delivery" value="sameday">
+                                    <label for="sameday">
+                                        <div class="option-info">
+                                            <strong>Same Day Delivery</strong>
+                                            <span>Available in Chennai only</span>
+                                        </div>
+                                        <div class="option-price">₹500</div>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="step-actions">
+                                <button type="button" class="btn btn-outline" onclick="prevStep(1)">
+                                    <i class="fas fa-arrow-left"></i> Back to Cart
+                                </button>
+                                <button type="button" class="btn btn-primary" onclick="nextStep(3)">
+                                    Continue to Payment <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Step 3: Payment -->
+                    <div class="checkout-step" id="step-3">
+                        <div class="step-header">
+                            <h2><i class="fas fa-credit-card"></i> Payment Method</h2>
+                            <p>Choose your preferred payment option</p>
+                        </div>
+                        
+                        <div class="payment-methods">
+                            <!-- Credit/Debit Card -->
+                            <div class="payment-method active" data-method="card">
+                                <div class="method-header">
+                                    <input type="radio" id="card" name="paymentMethod" value="card" checked>
+                                    <label for="card">
+                                        <i class="fas fa-credit-card"></i>
+                                        <span>Credit/Debit Card</span>
+                                    </label>
+                                    <div class="card-icons">
+                                        <i class="fab fa-cc-visa"></i>
+                                        <i class="fab fa-cc-mastercard"></i>
+                                        <i class="fab fa-cc-amex"></i>
+                                    </div>
+                                </div>
+                                <div class="method-content">
+                                    <form class="card-form" id="cardForm">
+                                        <div class="form-group">
+                                            <label for="cardNumber">Card Number *</label>
+                                            <div class="input-group">
+                                                <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" required>
+                                                <div class="card-type-icon" id="cardTypeIcon"></div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="cardName">Cardholder Name *</label>
+                                            <input type="text" id="cardName" name="cardName" placeholder="John Doe" required>
+                                        </div>
+                                        
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="expiryDate">Expiry Date *</label>
+                                                <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" maxlength="5" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="cvv">CVV *</label>
+                                                <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="4" required>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="save-card">
+                                            <input type="checkbox" id="saveCard" name="saveCard">
+                                            <label for="saveCard">Save this card for future purchases</label>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- UPI Payment -->
+                            <div class="payment-method" data-method="upi">
+                                <div class="method-header">
+                                    <input type="radio" id="upi" name="paymentMethod" value="upi">
+                                    <label for="upi">
+                                        <i class="fas fa-mobile-alt"></i>
+                                        <span>UPI Payment</span>
+                                    </label>
+                                    <div class="upi-icons">
+                                        <img src="https://cdn.jsdelivr.net/gh/razorpay/blade@master/packages/blade-icons/icons/upi.svg" alt="UPI" width="24" height="24">
+                                        <span class="upi-apps">GPay • PhonePe • Paytm</span>
+                                    </div>
+                                </div>
+                                <div class="method-content">
+                                    <form class="upi-form" id="upiForm">
+                                        <div class="upi-options">
+                                            <div class="upi-option">
+                                                <input type="radio" id="upiId" name="upiType" value="upiId" checked>
+                                                <label for="upiId">
+                                                    <i class="fas fa-at"></i>
+                                                    <span>Enter UPI ID</span>
+                                                </label>
+                                            </div>
+                                            <div class="upi-option">
+                                                <input type="radio" id="upiQr" name="upiType" value="upiQr">
+                                                <label for="upiQr">
+                                                    <i class="fas fa-qrcode"></i>
+                                                    <span>Scan QR Code</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="upi-input-section" id="upiIdSection">
+                                            <div class="form-group">
+                                                <label for="upiIdInput">UPI ID *</label>
+                                                <input type="text" id="upiIdInput" name="upiIdInput" placeholder="yourname@paytm">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="upi-qr-section" id="upiQrSection" style="display: none;">
+                                            <div class="qr-code-container">
+                                                <div class="qr-code">
+                                                    <i class="fas fa-qrcode"></i>
+                                                    <p>QR Code will appear here</p>
+                                                </div>
+                                                <p>Scan this QR code with any UPI app to pay</p>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- Net Banking -->
+                            <div class="payment-method" data-method="netbanking">
+                                <div class="method-header">
+                                    <input type="radio" id="netbanking" name="paymentMethod" value="netbanking">
+                                    <label for="netbanking">
+                                        <i class="fas fa-university"></i>
+                                        <span>Net Banking</span>
+                                    </label>
+                                </div>
+                                <div class="method-content">
+                                    <form class="netbanking-form" id="netbankingForm">
+                                        <div class="form-group">
+                                            <label for="bankSelect">Select Your Bank *</label>
+                                            <select id="bankSelect" name="bankSelect">
+                                                <option value="">Choose your bank</option>
+                                                <option value="sbi">State Bank of India</option>
+                                                <option value="hdfc">HDFC Bank</option>
+                                                <option value="icici">ICICI Bank</option>
+                                                <option value="axis">Axis Bank</option>
+                                                <option value="kotak">Kotak Mahindra Bank</option>
+                                                <option value="pnb">Punjab National Bank</option>
+                                                <option value="canara">Canara Bank</option>
+                                                <option value="bob">Bank of Baroda</option>
+                                                <option value="union">Union Bank of India</option>
+                                                <option value="other">Other Banks</option>
+                                            </select>
+                                        </div>
+                                        <div class="bank-info">
+                                            <i class="fas fa-info-circle"></i>
+                                            <p>You will be redirected to your bank's secure website to complete the payment.</p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- Digital Wallets -->
+                            <div class="payment-method" data-method="wallet">
+                                <div class="method-header">
+                                    <input type="radio" id="wallet" name="paymentMethod" value="wallet">
+                                    <label for="wallet">
+                                        <i class="fas fa-wallet"></i>
+                                        <span>Digital Wallets</span>
+                                    </label>
+                                </div>
+                                <div class="method-content">
+                                    <div class="wallet-options">
+                                        <div class="wallet-option" data-wallet="paytm">
+                                            <img src="https://assetscdn1.paytm.com/images/catalog/view_item/728702/1626342071171.png" alt="Paytm" width="60" height="24">
+                                            <span>Paytm Wallet</span>
+                                        </div>
+                                        <div class="wallet-option" data-wallet="phonepe">
+                                            <img src="https://www.phonepe.com/webstatic/6.8.0/images/logo.svg" alt="PhonePe" width="60" height="24">
+                                            <span>PhonePe</span>
+                                        </div>
+                                        <div class="wallet-option" data-wallet="amazonpay">
+                                            <img src="https://m.media-amazon.com/images/G/31/amazonpay/logo/amazonpay-logo._CB485936079_.png" alt="Amazon Pay" width="60" height="24">
+                                            <span>Amazon Pay</span>
+                                        </div>
+                                        <div class="wallet-option" data-wallet="mobikwik">
+                                            <img src="https://www.mobikwik.com/images/mobikwik-logo.png" alt="MobiKwik" width="60" height="24">
+                                            <span>MobiKwik</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Cash on Delivery -->
+                            <div class="payment-method" data-method="cod">
+                                <div class="method-header">
+                                    <input type="radio" id="cod" name="paymentMethod" value="cod">
+                                    <label for="cod">
+                                        <i class="fas fa-money-bill-wave"></i>
+                                        <span>Cash on Delivery</span>
+                                    </label>
+                                    <div class="cod-fee">+ ₹50 handling fee</div>
+                                </div>
+                                <div class="method-content">
+                                    <div class="cod-info">
+                                        <div class="info-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Pay when your order is delivered</span>
+                                        </div>
+                                        <div class="info-item">
+                                            <i class="fas fa-money-bill"></i>
+                                            <span>Cash payment to delivery executive</span>
+                                        </div>
+                                        <div class="info-item">
+                                            <i class="fas fa-exclamation-triangle"></i>
+                                            <span>Additional ₹50 handling charges apply</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="step-actions">
+                            <button type="button" class="btn btn-outline" onclick="prevStep(2)">
+                                <i class="fas fa-arrow-left"></i> Back to Shipping
+                            </button>
+                            <button type="button" class="btn btn-primary" onclick="processPayment()">
+                                <i class="fas fa-lock"></i> Complete Payment
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Confirmation -->
+                    <div class="checkout-step" id="step-4">
+                        <div class="confirmation-content">
+                            <div class="success-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h2>Order Confirmed!</h2>
+                            <p>Thank you for your purchase. Your order has been successfully placed.</p>
+                            
+                            <div class="order-details">
+                                <div class="order-number">
+                                    <strong>Order #: <span id="orderNumber">ITC-2024-001</span></strong>
+                                </div>
+                                <div class="order-info">
+                                    <p>You will receive an email confirmation shortly with tracking details.</p>
+                                    <p>Estimated delivery: <strong id="estimatedDelivery">3-5 business days</strong></p>
+                                </div>
+                            </div>
+                            
+                            <div class="confirmation-actions">
+                                <a href="profile.html" class="btn btn-primary">
+                                    <i class="fas fa-user"></i> Track Order
+                                </a>
+                                <a href="store.html" class="btn btn-outline">
+                                    <i class="fas fa-shopping-cart"></i> Continue Shopping
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Summary Sidebar -->
+                <div class="order-summary">
+                    <div class="summary-header">
+                        <h3><i class="fas fa-receipt"></i> Order Summary</h3>
+                    </div>
+                    
+                    <div class="summary-items" id="summaryItems">
+                        <!-- Order items will be loaded here -->
+                    </div>
+                    
+                    <div class="summary-calculations">
+                        <div class="calc-row">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">₹0</span>
+                        </div>
+                        <div class="calc-row">
+                            <span>Shipping:</span>
+                            <span id="shippingCost">₹150</span>
+                        </div>
+                        <div class="calc-row">
+                            <span>Tax (18% GST):</span>
+                            <span id="taxAmount">₹0</span>
+                        </div>
+                        <div class="calc-row discount" id="discountRow" style="display: none;">
+                            <span>Discount:</span>
+                            <span id="discountAmount">-₹0</span>
+                        </div>
+                        <div class="calc-row total">
+                            <span>Total:</span>
+                            <span id="totalAmount">₹0</span>
+                        </div>
+                    </div>
+                    
+                    <div class="promo-code">
+                        <div class="promo-input">
+                            <input type="text" id="promoCode" placeholder="Enter promo code">
+                            <button type="button" id="applyPromo" class="btn btn-outline">Apply</button>
+                        </div>
+                    </div>
+                    
+                    <div class="security-info">
+                        <div class="security-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Secure SSL encryption</span>
+                        </div>
+                        <div class="security-item">
+                            <i class="fas fa-undo"></i>
+                            <span>30-day return policy</span>
+                        </div>
+                        <div class="security-item">
+                            <i class="fas fa-headset"></i>
+                            <span>24/7 customer support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-laptop"></i> IT Connect</h3>
+                    <p>Professional laptop repair services with home visits. Fast, reliable, and affordable solutions for all your laptop needs.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="store.html">Store</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Store Categories</h4>
+                    <ul>
+                        <li><a href="store.html" data-category="memory">RAM & Memory</a></li>
+                        <li><a href="store.html" data-category="storage">Storage</a></li>
+                        <li><a href="store.html" data-category="screen">Screens</a></li>
+                        <li><a href="store.html" data-category="battery">Batteries</a></li>
+                        <li><a href="store.html" data-category="keyboard">Keyboards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#" onclick="showNotification('Order Tracking: Track your orders in real-time!', 'info')">Order Tracking</a></li>
+                        <li><a href="#" onclick="showNotification('Return Policy: Easy 30-day returns!', 'info')">Return Policy</a></li>
+                        <li><a href="#" onclick="showNotification('Warranty Info: Comprehensive warranty coverage!', 'info')">Warranty Info</a></li>
+                        <li><a href="#" onclick="showNotification('FAQ: Find answers to common questions!', 'info')">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +91 9884745432</p>
+                        <p><i class="fas fa-envelope"></i> info@itconnect.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Chennai, Tamil Nadu</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 IT Connect. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/checkout.js"></script>
+    <script src="assets/js/live-chat.js"></script>
+</body>
+</html>

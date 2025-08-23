@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Diagnostics - IT Connect | Advanced Laptop Problem Detection</title>
+    <meta name="description" content="Advanced AI-powered diagnostics to identify laptop issues before our technician arrives. Get instant problem analysis and repair recommendations.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <h2><i class="fas fa-laptop"></i> IT CONNECT</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="index.html#services" class="nav-link">Services</a></li>
+                    <li><a href="store.html" class="nav-link">Store</a></li>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                    <li><a href="index.html#blog" class="nav-link">Blog</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="login.html" class="btn btn-outline">
+                        <i class="fas fa-user"></i> Login
+                    </a>
+                    <div class="cart-icon">
+                        <a href="#" id="cartToggle">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
+                    <a href="tel:+9198847 45432" class="btn btn-primary">
+                        <i class="fas fa-phone"></i> Call Now
+                    </a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- AI Diagnostics Hero -->
+    <section class="ai-diagnostics-hero">
+        <div class="container">
+            <div class="diagnostics-hero-content">
+                <div class="hero-text">
+                    <h1>AI-Powered Laptop Diagnostics</h1>
+                    <p>Get instant problem analysis and repair recommendations using our advanced AI system. Identify issues before our technician arrives for faster, more efficient service.</p>
+                    <div class="hero-features">
+                        <div class="feature">
+                            <i class="fas fa-brain"></i>
+                            <span>AI Analysis</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-clock"></i>
+                            <span>Instant Results</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Accurate Detection</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="ai-brain-animation">
+                        <i class="fas fa-brain"></i>
+                        <div class="pulse-rings">
+                            <div class="pulse-ring"></div>
+                            <div class="pulse-ring"></div>
+                            <div class="pulse-ring"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diagnostics Interface -->
+    <section class="diagnostics-interface">
+        <div class="container">
+            <div class="diagnostics-container">
+                <!-- Step Indicator -->
+                <div class="step-indicator">
+                    <div class="step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Basic Info</div>
+                    </div>
+                    <div class="step" data-step="2">
+                        <div class="step-number">2</div>
+                        <div class="step-label">Symptoms</div>
+                    </div>
+                    <div class="step" data-step="3">
+                        <div class="step-number">3</div>
+                        <div class="step-label">Analysis</div>
+                    </div>
+                    <div class="step" data-step="4">
+                        <div class="step-number">4</div>
+                        <div class="step-label">Results</div>
+                    </div>
+                </div>
+
+                <!-- Diagnostic Steps -->
+                <div class="diagnostic-steps">
+                    <!-- Step 1: Basic Information -->
+                    <div class="diagnostic-step active" id="step-1">
+                        <div class="step-header">
+                            <h2>Tell Us About Your Laptop</h2>
+                            <p>Basic information helps our AI provide more accurate diagnostics</p>
+                        </div>
+                        
+                        <div class="diagnostic-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="laptopBrand">Laptop Brand</label>
+                                    <select id="laptopBrand" name="laptopBrand" required>
+                                        <option value="">Select Brand</option>
+                                        <option value="dell">Dell</option>
+                                        <option value="hp">HP</option>
+                                        <option value="lenovo">Lenovo</option>
+                                        <option value="asus">ASUS</option>
+                                        <option value="acer">Acer</option>
+                                        <option value="apple">Apple</option>
+                                        <option value="msi">MSI</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="laptopAge">Laptop Age</label>
+                                    <select id="laptopAge" name="laptopAge" required>
+                                        <option value="">Select Age</option>
+                                        <option value="0-1">Less than 1 year</option>
+                                        <option value="1-2">1-2 years</option>
+                                        <option value="2-3">2-3 years</option>
+                                        <option value="3-5">3-5 years</option>
+                                        <option value="5+">More than 5 years</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="laptopModel">Model (Optional)</label>
+                                <input type="text" id="laptopModel" name="laptopModel" placeholder="e.g., Inspiron 15, Pavilion, ThinkPad">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="usagePattern">Usage Pattern</label>
+                                <select id="usagePattern" name="usagePattern" required>
+                                    <option value="">Select Usage</option>
+                                    <option value="light">Light (Web browsing, documents)</option>
+                                    <option value="moderate">Moderate (Office work, streaming)</option>
+                                    <option value="heavy">Heavy (Gaming, video editing)</option>
+                                    <option value="professional">Professional (Development, design)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="step-actions">
+                            <button class="btn btn-primary" onclick="nextStep()">
+                                Next Step <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Symptoms Selection -->
+                    <div class="diagnostic-step" id="step-2">
+                        <div class="step-header">
+                            <h2>What Problems Are You Experiencing?</h2>
+                            <p>Select all symptoms that match your laptop's behavior</p>
+                        </div>
+                        
+                        <div class="symptoms-grid">
+                            <div class="symptom-category">
+                                <h3><i class="fas fa-desktop"></i> Display Issues</h3>
+                                <div class="symptom-options">
+                                    <label class="symptom-option">
+                                        <input type="checkbox" name="symptoms" value="screen-black">
+                                        <span class="checkmark"></span>
+                                        <div class="symptom-info">
+                                            <strong>Black/Blank Screen</strong>
+                                            <small>Screen doesn't turn on or shows nothing</small>
+                                        </div>
+                                    </label>
+                                    <label class="symptom-option">
+                                        <input type="checkbox" name="symptoms" value="screen-flickering">
+                                        <span class="checkmark"></span>
+                                        <div class="symptom-info">
+                                            <strong>Screen Flickering</strong>
+                                            <small>Display flickers or shows lines</small>
+                                        </div>
+                                    </label>
+                                    <label class="symptom-option">
+                                        <input type="checkbox" name="symptoms" value="screen-cracked">
+                                        <span class="checkmark"></span>
+                                        <div class="symptom-info">
+                                            <strong>Cracked/Damaged Screen</strong>
+                                            <small>Physical damage to the display</small>
+                                        </div>
+                                    </label>
+                                    <label class="symptom-option">
+                                        <input type="checkbox" name="symptoms" value="screen-dim">
+                                        <span class="checkmark"></span>
+                                        <div class="symptom-info">
+                                            <strong>Dim/Dark Display</strong>
+                                            <small>Screen is too dark or brightness issues</small>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="symptom-category">
+                                <h3><i class="fas fa-microchip"></i> Performance Issues</h3>
+                                <div class="symptom-options">
+                                    <label class="symptom-option">
+                                        <input type="checkbox" name="symptoms" value="slow-performance">
+                                        <span class="checkmark"></span>
+                                        <div class="symptom-info">
+                                            <strong>Slow Performance</strong>
+                                            <small>System runs slower than usual</small>
+                                        </div>
+                                    </label>
+                                    <label class="symptom-option">
+                                        <input type="checkbox" name="symptoms" value="frequent-freezing">
+                                        <span class="checkmark"></span>
+                                        <div class="symptom-info">
+                                            <strong>Frequent Freezing</strong>
+                                            <small>System freezes or becomes unresponsive</small>
+                                        </div>
+                                    </label>
+                                    <label class="symptom-option">
+                                        <input type="checkbox" name="symptoms" value="random-crashes">
+                                        <span class="checkmark"></span>
+                                        <div class="symptom-info">
+                                            <strong>Random Crashes</strong>
+                                            <small>Blue screen or unexpected shutdowns</small>
+                                        </div>
+                                    </label>
+                                    <label class="symptom-option">
+                                        <input type="checkbox" name="symptoms" value="slow-startup">
+                                        <span class="checkmark"></span>
+                                        <div class="symptom-info">
+                                            <strong>Slow Startup</strong>
+                                            <small>Takes long time to boot up</small>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="symptom-category">
+                                <h3><i class="fas fa-thermometer-half"></i> Hardware Issues</h3>
+                                <div class="symptom-options">
+                                    <label class="symptom-option">
+                                        <input type="checkbox" name="symptoms" value="overheating">
+                                        <span class="checkmark"></span>
+                                        <div class="symptom-info">
+                                            <strong>Overheating</strong>
+                                            <small>Laptop gets very hot during use</small>
+                                        </div>
+                                    </label>
+                                    <label class="symptom-option">
+                                        <input type="checkbox" name="symptoms" value="loud-fan">
+                                        <span class="checkmark"></span>
+                                        <div class="symptom-info">
+                                            <strong>Loud Fan Noise</strong>
+                                            <small>Fan runs constantly or very loudly</small>
+                                        </div>
+                                    </label>
+                                    <label class="symptom-option">
+                                        <input type="checkbox" name="symptoms" value="battery-issues">
+                                        <span class="checkmark"></span>
+                                        <div class="symptom-info">
+                                            <strong>Battery Problems</strong>
+                                            <small>Poor battery life or charging issues</small>
+                                        </div>
+                                    </label>
+                                    <label class="symptom-option">
+                                        <input type="checkbox" name="symptoms" value="keyboard-issues">
+                                        <span class="checkmark"></span>
+                                        <div class="symptom-info">
+                                            <strong>Keyboard Problems</strong>
+                                            <small>Keys not working or sticky keys</small>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="symptom-category">
+                                <h3><i class="fas fa-wifi"></i> Connectivity Issues</h3>
+                                <div class="symptom-options">
+                                    <label class="symptom-option">
+                                        <input type="checkbox" name="symptoms" value="wifi-problems">
+                                        <span class="checkmark"></span>
+                                        <div class="symptom-info">
+                                            <strong>WiFi Problems</strong>
+                                            <small>Can't connect to WiFi or frequent drops</small>
+                                        </div>
+                                    </label>
+                                    <label class="symptom-option">
+                                        <input type="checkbox" name="symptoms" value="usb-issues">
+                                        <span class="checkmark"></span>
+                                        <div class="symptom-info">
+                                            <strong>USB Port Issues</strong>
+                                            <small>USB devices not recognized</small>
+                                        </div>
+                                    </label>
+                                    <label class="symptom-option">
+                                        <input type="checkbox" name="symptoms" value="audio-problems">
+                                        <span class="checkmark"></span>
+                                        <div class="symptom-info">
+                                            <strong>Audio Problems</strong>
+                                            <small>No sound or distorted audio</small>
+                                        </div>
+                                    </label>
+                                    <label class="symptom-option">
+                                        <input type="checkbox" name="symptoms" value="bluetooth-issues">
+                                        <span class="checkmark"></span>
+                                        <div class="symptom-info">
+                                            <strong>Bluetooth Issues</strong>
+                                            <small>Can't connect Bluetooth devices</small>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="step-actions">
+                            <button class="btn btn-outline" onclick="previousStep()">
+                                <i class="fas fa-arrow-left"></i> Previous
+                            </button>
+                            <button class="btn btn-primary" onclick="startAnalysis()">
+                                Start AI Analysis <i class="fas fa-brain"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: AI Analysis -->
+                    <div class="diagnostic-step" id="step-3">
+                        <div class="step-header">
+                            <h2>AI Analysis in Progress</h2>
+                            <p>Our advanced AI is analyzing your laptop's symptoms</p>
+                        </div>
+                        
+                        <div class="analysis-container">
+                            <div class="ai-analysis-visual">
+                                <div class="analysis-brain">
+                                    <i class="fas fa-brain"></i>
+                                    <div class="analysis-waves">
+                                        <div class="wave"></div>
+                                        <div class="wave"></div>
+                                        <div class="wave"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="analysis-steps">
+                                <div class="analysis-step" id="analysis-1">
+                                    <i class="fas fa-search"></i>
+                                    <span>Analyzing symptoms...</span>
+                                    <div class="step-status"><i class="fas fa-spinner fa-spin"></i></div>
+                                </div>
+                                <div class="analysis-step" id="analysis-2">
+                                    <i class="fas fa-database"></i>
+                                    <span>Comparing with database...</span>
+                                    <div class="step-status"><i class="fas fa-clock"></i></div>
+                                </div>
+                                <div class="analysis-step" id="analysis-3">
+                                    <i class="fas fa-brain"></i>
+                                    <span>AI pattern recognition...</span>
+                                    <div class="step-status"><i class="fas fa-clock"></i></div>
+                                </div>
+                                <div class="analysis-step" id="analysis-4">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>Generating recommendations...</span>
+                                    <div class="step-status"><i class="fas fa-clock"></i></div>
+                                </div>
+                            </div>
+                            
+                            <div class="analysis-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="analysisProgress"></div>
+                                </div>
+                                <div class="progress-text">
+                                    <span id="progressPercentage">0%</span> Complete
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Results -->
+                    <div class="diagnostic-step" id="step-4">
+                        <div class="step-header">
+                            <h2>Diagnostic Results</h2>
+                            <p>AI analysis complete - here's what we found</p>
+                        </div>
+                        
+                        <div class="results-container" id="resultsContainer">
+                            <!-- Results will be populated by JavaScript -->
+                        </div>
+                        
+                        <div class="results-actions">
+                            <button class="btn btn-primary" onclick="bookService()">
+                                <i class="fas fa-calendar-check"></i> Book Service Now
+                            </button>
+                            <button class="btn btn-outline" onclick="restartDiagnostics()">
+                                <i class="fas fa-redo"></i> Run New Diagnosis
+                            </button>
+                            <button class="btn btn-secondary" onclick="shareResults()">
+                                <i class="fas fa-share"></i> Share Results
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How Our AI Diagnostics Work</h2>
+                <p>Advanced machine learning algorithms trained on thousands of laptop repair cases</p>
+            </div>
+            
+            <div class="how-it-works-grid">
+                <div class="how-it-works-item">
+                    <div class="work-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h3>Symptom Collection</h3>
+                    <p>Our system collects detailed information about your laptop's symptoms and behavior patterns.</p>
+                </div>
+                <div class="how-it-works-item">
+                    <div class="work-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI Analysis</h3>
+                    <p>Machine learning algorithms analyze patterns and compare with our extensive repair database.</p>
+                </div>
+                <div class="how-it-works-item">
+                    <div class="work-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Accurate Diagnosis</h3>
+                    <p>Get precise problem identification with confidence scores and repair recommendations.</p>
+                </div>
+                <div class="how-it-works-item">
+                    <div class="work-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Action Plan</h3>
+                    <p>Receive detailed repair estimates, timeline, and preparation steps for technician visit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-laptop"></i> IT Connect</h3>
+                    <p>Professional laptop repair services with home visits. Fast, reliable, and affordable solutions for all your laptop needs.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#blog">Blog</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="index.html#services">Screen Replacement</a></li>
+                        <li><a href="index.html#services">Keyboard Repair</a></li>
+                        <li><a href="index.html#services">Hardware Upgrades</a></li>
+                        <li><a href="index.html#services">Software Issues</a></li>
+                        <li><a href="index.html#services">Battery Replacement</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +91 9884745432</p>
+                        <p><i class="fas fa-envelope"></i> info@itconnect.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Chennai, Tamil Nadu</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 IT Connect. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/ai-diagnostics-complete.js"></script>
+    <script src="assets/js/live-chat.js"></script>
+</body>
+</html>
