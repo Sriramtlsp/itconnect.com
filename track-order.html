@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Order - IT Connect | Order Tracking</title>
+    <meta name="description" content="Track your IT Connect orders and parts delivery status in real-time. Get updates on your laptop repair parts and accessories.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <h2><i class="fas fa-laptop"></i> IT CONNECT</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="index.html#services" class="nav-link">Services</a></li>
+                    <li><a href="store.html" class="nav-link">Store</a></li>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                    <li><a href="index.html#blog" class="nav-link">Blog</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                    <li><a href="ai-diagnostics.html" class="nav-link">AI Diagnostics</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="login.html" class="btn btn-outline">
+                        <i class="fas fa-user"></i> Login
+                    </a>
+                    <div class="cart-icon">
+                        <a href="#" id="cartToggle">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
+                    <a href="tel:+9198847 45432" class="btn btn-primary">
+                        <i class="fas fa-phone"></i> Call Now
+                    </a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Track Order Hero -->
+    <section class="track-order-hero">
+        <div class="container">
+            <div class="track-hero-content">
+                <h1><i class="fas fa-shipping-fast"></i> Track Your Order</h1>
+                <p>Enter your order number to get real-time updates on your parts delivery and service status</p>
+                
+                <div class="track-search-container">
+                    <form class="track-search-form" id="trackOrderForm">
+                        <div class="search-input-group">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="orderNumber" placeholder="Enter Order Number (e.g., ORD-2024-001)" required>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-search"></i> Track Order
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <div class="track-help">
+                        <p><i class="fas fa-info-circle"></i> Order number can be found in your confirmation email or SMS</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Tracking Results -->
+    <section class="order-tracking-section">
+        <div class="container">
+            <!-- Order Not Found Message -->
+            <div class="order-not-found" id="orderNotFound" style="display: none;">
+                <div class="not-found-content">
+                    <i class="fas fa-search"></i>
+                    <h3>Order Not Found</h3>
+                    <p>We couldn't find an order with that number. Please check your order number and try again.</p>
+                    <div class="help-options">
+                        <a href="index.html#contact" class="btn btn-outline">
+                            <i class="fas fa-envelope"></i> Contact Support
+                        </a>
+                        <a href="https://wa.me/+918667018453" class="btn btn-secondary" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp Help
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Details Container -->
+            <div class="order-details-container" id="orderDetailsContainer" style="display: none;">
+                <!-- Order Header -->
+                <div class="order-header-card">
+                    <div class="order-header-info">
+                        <h2 id="orderTitle">Order #ORD-2024-001</h2>
+                        <div class="order-meta">
+                            <span class="order-date" id="orderDate">Placed on March 25, 2024</span>
+                            <span class="order-status-badge" id="orderStatusBadge">Processing</span>
+                        </div>
+                    </div>
+                    <div class="order-actions">
+                        <button class="btn btn-outline" onclick="window.print()">
+                            <i class="fas fa-print"></i> Print Details
+                        </button>
+                        <button class="btn btn-secondary" onclick="shareOrder()">
+                            <i class="fas fa-share"></i> Share
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Order Progress Tracker -->
+                <div class="order-progress-card">
+                    <h3><i class="fas fa-route"></i> Order Progress</h3>
+                    <div class="progress-timeline" id="progressTimeline">
+                        <div class="timeline-step completed">
+                            <div class="step-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="step-content">
+                                <h4>Order Confirmed</h4>
+                                <p>Your order has been received and confirmed</p>
+                                <span class="step-time">March 25, 2024 - 10:30 AM</span>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-step completed">
+                            <div class="step-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="step-content">
+                                <h4>Payment Verified</h4>
+                                <p>Payment has been processed successfully</p>
+                                <span class="step-time">March 25, 2024 - 10:35 AM</span>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-step active">
+                            <div class="step-icon">
+                                <i class="fas fa-box"></i>
+                            </div>
+                            <div class="step-content">
+                                <h4>Processing</h4>
+                                <p>Your order is being prepared for shipment</p>
+                                <span class="step-time">In Progress</span>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-step pending">
+                            <div class="step-icon">
+                                <i class="fas fa-truck"></i>
+                            </div>
+                            <div class="step-content">
+                                <h4>Shipped</h4>
+                                <p>Your order is on the way</p>
+                                <span class="step-time">Pending</span>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-step pending">
+                            <div class="step-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <div class="step-content">
+                                <h4>Delivered</h4>
+                                <p>Order delivered to your address</p>
+                                <span class="step-time">Pending</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Items -->
+                <div class="order-items-card">
+                    <h3><i class="fas fa-box-open"></i> Order Items</h3>
+                    <div class="order-items-list" id="orderItemsList">
+                        <div class="order-item">
+                            <div class="item-image">
+                                <img src="https://via.placeholder.com/80x80" alt="500GB SSD Drive">
+                            </div>
+                            <div class="item-details">
+                                <h4>500GB SSD Drive</h4>
+                                <p class="item-specs">SATA III, 2.5", 560MB/s Read Speed</p>
+                                <div class="item-meta">
+                                    <span class="item-quantity">Qty: 1</span>
+                                    <span class="item-price">₹4,200</span>
+                                </div>
+                            </div>
+                            <div class="item-status">
+                                <span class="status-badge processing">Processing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shipping Information -->
+                <div class="shipping-info-card">
+                    <h3><i class="fas fa-truck"></i> Shipping Information</h3>
+                    <div class="shipping-details">
+                        <div class="shipping-row">
+                            <div class="shipping-item">
+                                <strong>Shipping Address:</strong>
+                                <p id="shippingAddress">
+                                    John Doe<br>
+                                    123 Main Street, Apartment 4B<br>
+                                    Chennai, Tamil Nadu 600001<br>
+                                    India
+                                </p>
+                            </div>
+                            <div class="shipping-item">
+                                <strong>Delivery Method:</strong>
+                                <p id="deliveryMethod">Standard Delivery (3-5 business days)</p>
+                                
+                                <strong>Tracking Number:</strong>
+                                <p id="trackingNumber">TRK123456789</p>
+                                
+                                <strong>Estimated Delivery:</strong>
+                                <p id="estimatedDelivery">March 30, 2024</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="order-summary-card">
+                    <h3><i class="fas fa-receipt"></i> Order Summary</h3>
+                    <div class="summary-details">
+                        <div class="summary-row">
+                            <span>Subtotal:</span>
+                            <span id="orderSubtotal">₹4,200</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping:</span>
+                            <span id="orderShipping">₹100</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Tax:</span>
+                            <span id="orderTax">₹387</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total:</span>
+                            <span id="orderTotal">₹4,687</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Support Actions -->
+                <div class="support-actions-card">
+                    <h3><i class="fas fa-headset"></i> Need Help?</h3>
+                    <div class="support-options">
+                        <button class="support-btn" onclick="contactSupport('order-issue')">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <div>
+                                <strong>Report Issue</strong>
+                                <span>Problem with your order</span>
+                            </div>
+                        </button>
+                        
+                        <button class="support-btn" onclick="contactSupport('delivery-update')">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Delivery Update</strong>
+                                <span>Change delivery details</span>
+                            </div>
+                        </button>
+                        
+                        <button class="support-btn" onclick="contactSupport('cancel-order')">
+                            <i class="fas fa-times-circle"></i>
+                            <div>
+                                <strong>Cancel Order</strong>
+                                <span>Cancel this order</span>
+                            </div>
+                        </button>
+                        
+                        <button class="support-btn" onclick="contactSupport('general-help')">
+                            <i class="fas fa-question-circle"></i>
+                            <div>
+                                <strong>General Help</strong>
+                                <span>Other questions</span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Orders -->
+            <div class="recent-orders-section">
+                <h3><i class="fas fa-history"></i> Recent Orders</h3>
+                <div class="recent-orders-list">
+                    <div class="recent-order-item" onclick="trackOrder('ORD-2024-002')">
+                        <div class="recent-order-info">
+                            <strong>Order #ORD-2024-002</strong>
+                            <span>16GB DDR4 RAM Module</span>
+                            <small>March 20, 2024</small>
+                        </div>
+                        <div class="recent-order-status">
+                            <span class="status-badge delivered">Delivered</span>
+                        </div>
+                    </div>
+                    
+                    <div class="recent-order-item" onclick="trackOrder('ORD-2024-001')">
+                        <div class="recent-order-info">
+                            <strong>Order #ORD-2024-001</strong>
+                            <span>500GB SSD Drive</span>
+                            <small>March 25, 2024</small>
+                        </div>
+                        <div class="recent-order-status">
+                            <span class="status-badge processing">Processing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-laptop"></i> IT Connect</h3>
+                    <p>Professional laptop repair services with home visits. Fast, reliable, and affordable solutions for all your laptop needs.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="store.html">Store</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Portal</h4>
+                    <ul>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="login.html">Register</a></li>
+                        <li><a href="track-order.html">Track Order</a></li>
+                        <li><a href="service-history.html">Service History</a></li>
+                        <li><a href="support-tickets.html">Support Tickets</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +91 9884745432</p>
+                        <p><i class="fas fa-envelope"></i> info@itconnect.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Chennai, Tamil Nadu</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 IT Connect. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/track-order.js"></script>
+    <script src="assets/js/live-chat.js"></script>
+</body>
+</html>

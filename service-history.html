@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service History - IT Connect | Repair History</title>
+    <meta name="description" content="View your complete IT Connect service history. Track all your laptop repairs, maintenance records, and warranty information.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <h2><i class="fas fa-laptop"></i> IT CONNECT</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="index.html#services" class="nav-link">Services</a></li>
+                    <li><a href="store.html" class="nav-link">Store</a></li>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                    <li><a href="index.html#blog" class="nav-link">Blog</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                    <li><a href="ai-diagnostics.html" class="nav-link">AI Diagnostics</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="login.html" class="btn btn-outline">
+                        <i class="fas fa-user"></i> Login
+                    </a>
+                    <div class="cart-icon">
+                        <a href="#" id="cartToggle">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
+                    <a href="tel:+9198847 45432" class="btn btn-primary">
+                        <i class="fas fa-phone"></i> Call Now
+                    </a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Service History Hero -->
+    <section class="service-history-hero">
+        <div class="container">
+            <div class="service-hero-content">
+                <h1><i class="fas fa-history"></i> Service History</h1>
+                <p>Complete record of all your laptop repairs, maintenance, and warranty information</p>
+                
+                <div class="service-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="totalServices">12</span>
+                            <span class="stat-label">Total Services</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="thisYear">8</span>
+                            <span class="stat-label">This Year</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="activeWarranties">3</span>
+                            <span class="stat-label">Active Warranties</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service History Section -->
+    <section class="service-history-section">
+        <div class="container">
+            <!-- Filters and Search -->
+            <div class="service-filters">
+                <div class="filter-group">
+                    <div class="search-filter">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="serviceSearch" placeholder="Search services, devices, or issues...">
+                    </div>
+                    
+                    <div class="date-filter">
+                        <select id="yearFilter">
+                            <option value="">All Years</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                        </select>
+                    </div>
+                    
+                    <div class="status-filter">
+                        <select id="statusFilter">
+                            <option value="">All Status</option>
+                            <option value="completed">Completed</option>
+                            <option value="warranty">Under Warranty</option>
+                            <option value="expired">Warranty Expired</option>
+                        </select>
+                    </div>
+                    
+                    <div class="service-filter">
+                        <select id="serviceTypeFilter">
+                            <option value="">All Services</option>
+                            <option value="repair">Repairs</option>
+                            <option value="maintenance">Maintenance</option>
+                            <option value="upgrade">Upgrades</option>
+                            <option value="diagnostic">Diagnostics</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="filter-actions">
+                    <button class="btn btn-outline" onclick="clearFilters()">
+                        <i class="fas fa-times"></i> Clear Filters
+                    </button>
+                    <button class="btn btn-secondary" onclick="exportHistory()">
+                        <i class="fas fa-download"></i> Export History
+                    </button>
+                </div>
+            </div>
+
+            <!-- Service History List -->
+            <div class="service-history-container">
+                <div class="service-history-header">
+                    <h2>Your Service Records</h2>
+                    <div class="view-toggle">
+                        <button class="view-btn active" data-view="list">
+                            <i class="fas fa-list"></i> List View
+                        </button>
+                        <button class="view-btn" data-view="timeline">
+                            <i class="fas fa-project-diagram"></i> Timeline View
+                        </button>
+                    </div>
+                </div>
+
+                <!-- List View -->
+                <div class="service-list-view active" id="listView">
+                    <div class="service-history-list" id="serviceHistoryList">
+                        <!-- Service items will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Timeline View -->
+                <div class="service-timeline-view" id="timelineView">
+                    <div class="service-timeline" id="serviceTimeline">
+                        <!-- Timeline items will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- No Services Message -->
+                <div class="no-services" id="noServices" style="display: none;">
+                    <div class="no-services-content">
+                        <i class="fas fa-clipboard-list"></i>
+                        <h3>No Service Records Found</h3>
+                        <p>You don't have any service records yet, or no services match your current filters.</p>
+                        <div class="no-services-actions">
+                            <a href="index.html#contact" class="btn btn-primary">
+                                <i class="fas fa-plus"></i> Book a Service
+                            </a>
+                            <button class="btn btn-outline" onclick="clearFilters()">
+                                <i class="fas fa-filter"></i> Clear Filters
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Details Modal -->
+            <div class="service-modal" id="serviceModal">
+                <div class="service-modal-content">
+                    <div class="service-modal-header">
+                        <h3 id="modalServiceTitle">Service Details</h3>
+                        <button class="service-modal-close" onclick="closeServiceModal()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="service-modal-body" id="modalServiceBody">
+                        <!-- Service details will be populated by JavaScript -->
+                    </div>
+                    
+                    <div class="service-modal-footer">
+                        <button class="btn btn-outline" onclick="closeServiceModal()">Close</button>
+                        <button class="btn btn-secondary" onclick="downloadServiceReport()">
+                            <i class="fas fa-download"></i> Download Report
+                        </button>
+                        <button class="btn btn-primary" onclick="bookFollowUpService()">
+                            <i class="fas fa-calendar-plus"></i> Book Follow-up
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Warranty Information -->
+            <div class="warranty-section">
+                <h2><i class="fas fa-shield-alt"></i> Warranty Information</h2>
+                <div class="warranty-cards" id="warrantyCards">
+                    <!-- Warranty cards will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Service Recommendations -->
+            <div class="recommendations-section">
+                <h2><i class="fas fa-lightbulb"></i> Maintenance Recommendations</h2>
+                <div class="recommendations-grid">
+                    <div class="recommendation-card">
+                        <div class="recommendation-icon">
+                            <i class="fas fa-broom"></i>
+                        </div>
+                        <div class="recommendation-content">
+                            <h4>Regular Cleaning</h4>
+                            <p>Your laptop hasn't been cleaned in 6 months. Regular cleaning improves performance and extends lifespan.</p>
+                            <div class="recommendation-meta">
+                                <span class="priority medium">Medium Priority</span>
+                                <span class="estimated-cost">₹500 - ₹800</span>
+                            </div>
+                        </div>
+                        <div class="recommendation-actions">
+                            <button class="btn btn-outline btn-sm" onclick="learnMore('cleaning')">
+                                <i class="fas fa-info"></i> Learn More
+                            </button>
+                            <button class="btn btn-primary btn-sm" onclick="bookService('cleaning')">
+                                <i class="fas fa-calendar"></i> Book Now
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="recommendation-card">
+                        <div class="recommendation-icon">
+                            <i class="fas fa-thermometer-half"></i>
+                        </div>
+                        <div class="recommendation-content">
+                            <h4>Thermal Paste Replacement</h4>
+                            <p>Based on your laptop's age (3 years), thermal paste replacement can improve cooling performance.</p>
+                            <div class="recommendation-meta">
+                                <span class="priority low">Low Priority</span>
+                                <span class="estimated-cost">₹800 - ₹1,200</span>
+                            </div>
+                        </div>
+                        <div class="recommendation-actions">
+                            <button class="btn btn-outline btn-sm" onclick="learnMore('thermal-paste')">
+                                <i class="fas fa-info"></i> Learn More
+                            </button>
+                            <button class="btn btn-primary btn-sm" onclick="bookService('thermal-paste')">
+                                <i class="fas fa-calendar"></i> Book Now
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="recommendation-card">
+                        <div class="recommendation-icon">
+                            <i class="fas fa-hdd"></i>
+                        </div>
+                        <div class="recommendation-content">
+                            <h4>SSD Upgrade</h4>
+                            <p>Upgrade to SSD for significantly faster boot times and improved overall performance.</p>
+                            <div class="recommendation-meta">
+                                <span class="priority high">High Priority</span>
+                                <span class="estimated-cost">₹3,000 - ₹8,000</span>
+                            </div>
+                        </div>
+                        <div class="recommendation-actions">
+                            <button class="btn btn-outline btn-sm" onclick="learnMore('ssd-upgrade')">
+                                <i class="fas fa-info"></i> Learn More
+                            </button>
+                            <button class="btn btn-primary btn-sm" onclick="bookService('ssd-upgrade')">
+                                <i class="fas fa-calendar"></i> Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-laptop"></i> IT Connect</h3>
+                    <p>Professional laptop repair services with home visits. Fast, reliable, and affordable solutions for all your laptop needs.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="store.html">Store</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Portal</h4>
+                    <ul>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="login.html">Register</a></li>
+                        <li><a href="track-order.html">Track Order</a></li>
+                        <li><a href="service-history.html">Service History</a></li>
+                        <li><a href="support-tickets.html">Support Tickets</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +91 9884745432</p>
+                        <p><i class="fas fa-envelope"></i> info@itconnect.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Chennai, Tamil Nadu</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 IT Connect. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/service-history.js"></script>
+    <script src="assets/js/live-chat.js"></script>
+</body>
+</html>
