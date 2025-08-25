@@ -1,0 +1,426 @@
+/* WhatsApp Manager Styles */
+.whatsapp-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10000;
+    font-family: 'Inter', sans-serif;
+}
+
+.whatsapp-toggle {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.whatsapp-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-toggle i {
+    font-size: 28px;
+    color: white;
+    z-index: 2;
+}
+
+.whatsapp-pulse {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(37, 211, 102, 0.3);
+    animation: whatsappPulse 2s infinite;
+}
+
+@keyframes whatsappPulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+.whatsapp-menu {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 350px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px) scale(0.9);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.whatsapp-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.whatsapp-header {
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.whatsapp-header h4 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.whatsapp-header i {
+    margin-right: 8px;
+}
+
+.whatsapp-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background 0.2s ease;
+}
+
+.whatsapp-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.whatsapp-accounts {
+    padding: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.whatsapp-account {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    background: #f8f9fa;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.whatsapp-account:hover {
+    background: #e9ecef;
+    transform: translateY(-2px);
+}
+
+.whatsapp-account:last-child {
+    margin-bottom: 0;
+}
+
+.account-info {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.account-avatar {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+}
+
+.account-avatar i {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.account-details h5 {
+    margin: 0 0 4px 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.account-details p {
+    margin: 0 0 4px 0;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.availability {
+    font-size: 0.75rem;
+    color: #25d366;
+    font-weight: 500;
+}
+
+.whatsapp-chat-btn {
+    background: #25d366;
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.whatsapp-chat-btn:hover {
+    background: #128c7e;
+    transform: scale(1.1);
+}
+
+.whatsapp-quick-actions {
+    padding: 20px;
+    border-top: 1px solid #e9ecef;
+    background: #f8f9fa;
+}
+
+.whatsapp-quick-actions h5 {
+    margin: 0 0 15px 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.quick-action-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.quick-action-btn {
+    background: white;
+    border: 2px solid #25d366;
+    color: #25d366;
+    padding: 12px 8px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.quick-action-btn:hover {
+    background: #25d366;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.quick-action-btn i {
+    font-size: 1rem;
+}
+
+/* Service Card WhatsApp Button */
+.whatsapp-service-btn {
+    margin-top: 15px;
+    width: 100%;
+    background: #25d366 !important;
+    border-color: #25d366 !important;
+    color: white !important;
+}
+
+.whatsapp-service-btn:hover {
+    background: #128c7e !important;
+    border-color: #128c7e !important;
+    transform: translateY(-2px);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .whatsapp-widget {
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .whatsapp-toggle {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .whatsapp-toggle i {
+        font-size: 24px;
+    }
+    
+    .whatsapp-menu {
+        width: 320px;
+        right: -10px;
+    }
+    
+    .whatsapp-accounts {
+        max-height: 250px;
+    }
+    
+    .quick-action-buttons {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .whatsapp-menu {
+        width: 300px;
+        right: -20px;
+    }
+    
+    .whatsapp-header {
+        padding: 15px;
+    }
+    
+    .whatsapp-accounts {
+        padding: 15px;
+    }
+    
+    .whatsapp-quick-actions {
+        padding: 15px;
+    }
+}
+
+/* Integration with existing buttons */
+.btn.whatsapp-enhanced {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn.whatsapp-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn.whatsapp-enhanced:hover::before {
+    left: 100%;
+}
+
+/* Notification styles for WhatsApp */
+.whatsapp-notification {
+    background: linear-gradient(135deg, #25d366, #128c7e) !important;
+    color: white !important;
+}
+
+.whatsapp-notification .notification-content i {
+    color: white !important;
+}
+
+/* Animation for service cards */
+.service-card {
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+/* WhatsApp floating animation */
+@keyframes whatsappFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.whatsapp-toggle {
+    animation: whatsappFloat 3s ease-in-out infinite;
+}
+
+/* Success states */
+.whatsapp-success {
+    background: #25d366 !important;
+    color: white !important;
+}
+
+/* Loading states */
+.whatsapp-loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.whatsapp-loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #fff;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .whatsapp-menu {
+        background: #2d3748;
+        color: white;
+    }
+    
+    .whatsapp-account {
+        background: #4a5568;
+    }
+    
+    .whatsapp-account:hover {
+        background: #5a6578;
+    }
+    
+    .whatsapp-quick-actions {
+        background: #4a5568;
+        border-top-color: #5a6578;
+    }
+    
+    .quick-action-btn {
+        background: #2d3748;
+        color: #25d366;
+    }
+    
+    .account-details h5 {
+        color: white;
+    }
+    
+    .account-details p {
+        color: #cbd5e0;
+    }
+}
