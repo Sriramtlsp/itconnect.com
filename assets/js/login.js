@@ -6,21 +6,28 @@ document.addEventListener('DOMContentLoaded', function() {
     setupSocialLogin();
     setupPhoneValidation();
     initializeGoogleOAuth();
+    initializeFacebookSDK();
 });
 
 // Google OAuth Configuration
-const GOOGLE_CLIENT_ID = '958075348409-9q8cm6daqu2uva9oq8jmt7nnssls88v2.apps.googleusercontent.com; // Replace with your actual client ID
+const GOOGLE_CLIENT_ID = '958075348409-9q8cm6daqu2uva9oq8jmt7nnssls88v2.apps.googleusercontent.com'; // Replace with your actual client ID
 
 // Initialize Google OAuth
 function initializeGoogleOAuth() {
     // Check if Google API is loaded
     if (typeof google !== 'undefined' && google.accounts) {
-        google.accounts.id.initialize({
-            client_id: GOOGLE_CLIENT_ID,
-            callback: handleGoogleSignIn,
-            auto_select: false,
-            cancel_on_tap_outside: true
-        });
+        try {
+            google.accounts.id.initialize({
+                client_id: GOOGLE_CLIENT_ID,
+                callback: handleGoogleSignIn,
+                auto_select: false,
+                cancel_on_tap_outside: true
+            });
+            console.log('Google OAuth initialized successfully');
+        } catch (error) {
+            console.error('Error initializing Google OAuth:', error);
+            showNotification('Error initializing Google login. Please try again later.', 'error');
+        }
     } else {
         console.warn('Google OAuth API not loaded. Using demo mode.');
     }
@@ -414,8 +421,16 @@ function handleGoogleLogin(button) {
                 button.innerHTML = originalText;
                 button.disabled = false;
                 
-                if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
+                if (notification.isNotDisplayed()) {
+                    console.warn('Google Sign-In prompt not displayed:', notification.getNotDisplayedReason());
                     // If prompt is not displayed, show manual sign-in
+                    showGoogleSignInButton();
+                    if (notification.getNotDisplayedReason() === 'browser_not_supported') {
+                        showNotification('Your browser may not fully support Google Sign-In. Try a different browser or login method.', 'warning');
+                    }
+                } else if (notification.isSkippedMoment()) {
+                    console.warn('Google Sign-In skipped:', notification.getSkippedReason());
+                    // If prompt is skipped, show manual sign-in
                     showGoogleSignInButton();
                 }
             });
@@ -435,21 +450,95 @@ function handleGoogleLogin(button) {
     }
 }
 
+// Initialize Facebook SDK
+function initializeFacebookSDK() {
+    if (typeof FB !== 'undefined') {
+        try {
+            FB.init({
+                appId: '1234567890123456', // Replace with your actual Facebook App ID
+                cookie: true,
+                xfbml: true,
+                version: 'v18.0'
+            });
+            console.log('Facebook SDK initialized successfully');
+        } catch (error) {
+            console.error('Error initializing Facebook SDK:', error);
+        }
+    } else {
+        console.warn('Facebook SDK not loaded. Using demo mode.');
+    }
+}
+
 function handleFacebookLogin(button, provider) {
     // Show loading state
     const originalText = button.innerHTML;
     button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Connecting...';
     button.disabled = true;
 
-    // Simulate Facebook login (demo mode)
-    setTimeout(() => {
-        // Reset button
-        button.innerHTML = originalText;
-        button.disabled = false;
-
-        // Show enhanced demo mode message
-        showDemoModeMessage(provider);
-    }, 1500);
+    // Check if Facebook SDK is available
+    if (typeof FB !== 'undefined') {
+        try {
+            FB.login(function(response) {
+                // Reset button
+                button.innerHTML = originalText;
+                button.disabled = false;
+                
+                if (response.status === 'connected') {
+                    // Get user information
+                    FB.api('/me', {fields: 'id,email,first_name,last_name,name,picture'}, function(userInfo) {
+                        try {
+                            // Create user data object
+                            const userData = {
+                                id: userInfo.id,
+                                email: userInfo.email || 'facebook_user@example.com',
+                                firstName: userInfo.first_name,
+                                lastName: userInfo.last_name,
+                                fullName: userInfo.name,
+                                picture: userInfo.picture?.data?.url,
+                                isLoggedIn: true,
+                                loginMethod: 'facebook',
+                                sessionId: generateSessionId(),
+                                loginTime: new Date().toISOString()
+                            };
+                            
+                            // Store user session
+                            localStorage.setItem('userSession', JSON.stringify(userData));
+                            
+                            // Show success message
+                            const greeting = getTimeBasedGreeting();
+                            showNotification(`${greeting}, ${userData.firstName}! Welcome to IT Connect.`, 'success');
+                            
+                            // Redirect to profile or home page
+                            setTimeout(() => {
+                                window.location.href = 'profile.html';
+                            }, 2000);
+                        } catch (error) {
+                            console.error('Error processing Facebook user data:', error);
+                            showNotification('Error processing your Facebook login. Please try again.', 'error');
+                        }
+                    });
+                } else if (response.status === 'not_authorized') {
+                    console.warn('Facebook login not authorized');
+                    showNotification('Facebook login not authorized. Please allow the necessary permissions.', 'warning');
+                } else {
+                    console.warn('Facebook login failed or cancelled');
+                    showNotification('Facebook login was cancelled or failed. Please try again.', 'error');
+                }
+            }, {scope: 'public_profile,email'});
+        } catch (error) {
+            console.error('Facebook login error:', error);
+            button.innerHTML = originalText;
+            button.disabled = false;
+            showNotification('Error connecting to Facebook. Please try again later.', 'error');
+        }
+    } else {
+        // Fallback to demo mode if Facebook SDK is not loaded
+        setTimeout(() => {
+            button.innerHTML = originalText;
+            button.disabled = false;
+            showDemoModeMessage(provider);
+        }, 1500);
+    }
 }
 
 function showGoogleSignInButton() {

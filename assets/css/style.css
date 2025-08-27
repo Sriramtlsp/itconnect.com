@@ -122,10 +122,26 @@ a {
     justify-content: space-between;
 }
 
+.nav-brand {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding: 5px 0;
+}
+
 .nav-brand h2 {
     color: #2563eb;
     margin: 0;
     font-size: 1.8rem;
+}
+
+.brand-logo {
+    height: 200px;
+    width: auto;
+    max-width: 380px;
+    object-fit: contain;
+    vertical-align: middle;
+    display: block;
 }
 
 .nav-menu {
@@ -1031,6 +1047,14 @@ section {
 
 .footer-section h3 {
     color: #2563eb;
+}
+
+.footer-logo {
+    height: 200px;
+    width: auto;
+    max-width: 380px;
+    object-fit: contain;
+    vertical-align: middle;
 }
 
 .footer-section p {
@@ -3467,7 +3491,7 @@ section {
 .live-chat-widget {
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    left: 20px;
     z-index: 10000;
     font-family: 'Inter', sans-serif;
 }
@@ -3547,7 +3571,7 @@ section {
 .chat-window {
     position: absolute;
     bottom: 80px;
-    right: 0;
+    left: 0;
     width: 380px;
     height: 600px;
     background: white;
@@ -4001,7 +4025,7 @@ section {
 .chat-minimized {
     position: absolute;
     bottom: 80px;
-    right: 0;
+    left: 0;
     width: 280px;
     background: white;
     border-radius: 12px;
@@ -4110,14 +4134,14 @@ section {
 @media (max-width: 768px) {
     .live-chat-widget {
         bottom: 15px;
-        right: 15px;
+        left: 15px;
     }
     
     .chat-window {
         width: calc(100vw - 30px);
         height: calc(100vh - 120px);
         bottom: 80px;
-        right: -15px;
+        left: -15px;
         border-radius: 12px;
     }
     
@@ -4156,7 +4180,7 @@ section {
     
     .chat-minimized {
         width: calc(100vw - 100px);
-        right: -15px;
+        left: -15px;
     }
 }
 
