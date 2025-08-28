@@ -7,6 +7,7 @@
     <meta name="description" content="Professional laptop repair services with home visits. Screen replacement, software fixes, hardware upgrades. Fast, reliable, and affordable.">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/whatsapp-styles.css">
+    <link rel="stylesheet" href="assets/css/booking.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -199,6 +200,7 @@
                     <h3>Screen Replacement</h3>
                     <p>Cracked or damaged screen? We replace all laptop screens with high-quality parts.</p>
                     <div class="service-price">Starting at 4000rs</div>
+                    <button class="btn btn-book" data-service="Screen Replacement" data-price="4000">Book Now</button>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -207,6 +209,7 @@
                     <h3>Keyboard Repair</h3>
                     <p>Sticky keys or non-responsive keyboard? We fix or replace laptop keyboards.</p>
                     <div class="service-price">Starting at 750rs</div>
+                    <button class="btn btn-book" data-service="Keyboard Repair" data-price="750">Book Now</button>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -215,6 +218,7 @@
                     <h3>Hardware Upgrades</h3>
                     <p>Boost performance with RAM upgrades, SSD installations, and component replacements.</p>
                     <div class="service-price">Starting at 1000rs</div>
+                    <button class="btn btn-book" data-service="Hardware Upgrades" data-price="1000">Book Now</button>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -223,6 +227,7 @@
                     <h3>Software Issues</h3>
                     <p>Virus removal, OS installation, software troubleshooting, and data recovery.</p>
                     <div class="service-price">Starting at 1000rs</div>
+                    <button class="btn btn-book" data-service="Software Issues" data-price="1000">Book Now</button>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -231,6 +236,7 @@
                     <h3>Battery Replacement</h3>
                     <p>Poor battery life? We replace laptop batteries with genuine or compatible parts.</p>
                     <div class="service-price">Starting at 1000rs</div>
+                    <button class="btn btn-book" data-service="Battery Replacement" data-price="1000">Book Now</button>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -239,10 +245,75 @@
                     <h3>Overheating Fix</h3>
                     <p>Laptop running hot? We clean fans, replace thermal paste, and fix cooling issues.</p>
                     <div class="service-price">Starting at 750rs</div>
+                    <button class="btn btn-book" data-service="Overheating Fix" data-price="750">Book Now</button>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Book Service</h2>
+            <form id="bookingForm">
+                <input type="hidden" id="serviceName" name="serviceName">
+                <input type="hidden" id="servicePrice" name="servicePrice">
+                
+                <div class="form-group">
+                    <label for="customerName">Full Name</label>
+                    <input type="text" id="customerName" name="customerName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="customerEmail">Email</label>
+                    <input type="email" id="customerEmail" name="customerEmail" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="customerPhone">Phone Number</label>
+                    <input type="tel" id="customerPhone" name="customerPhone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="appointmentDate">Preferred Date</label>
+                    <input type="date" id="appointmentDate" name="appointmentDate" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="deviceType">Laptop Brand/Model</label>
+                    <input type="text" id="deviceType" name="deviceType" list="laptopModels" required>
+                    <datalist id="laptopModels">
+                        <option value="Apple MacBook Air M1">
+                        <option value="Apple MacBook Pro M2">
+                        <option value="Dell XPS 13">
+                        <option value="Dell Inspiron 15">
+                        <option value="HP Spectre x360">
+                        <option value="HP Pavilion">
+                        <option value="Lenovo ThinkPad X1 Carbon">
+                        <option value="Lenovo Yoga">
+                        <option value="Asus ROG Zephyrus">
+                        <option value="Asus VivoBook">
+                        <option value="Acer Swift 3">
+                        <option value="Acer Predator">
+                        <option value="Microsoft Surface Laptop">
+                        <option value="Microsoft Surface Pro">
+                        <option value="Samsung Galaxy Book">
+                        <option value="Samsung Notebook">
+                    </datalist>
+                </div>
+                
+                <div class="form-group">
+                    <label for="issueDescription">Describe the Issue</label>
+                    <textarea id="issueDescription" name="issueDescription" rows="3" required></textarea>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Confirm Booking</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <!-- AI Diagnostics Section -->
     <section id="ai-diagnostics" class="ai-diagnostics">
@@ -656,7 +727,8 @@
     </footer>
 
     <script src="assets/js/script.js"></script>
-    <script src="assets/js/whatsapp-manager.js"></script>
+    <script src="assets/js/database.js"></script>
+    <script src="assets/js/booking.js"></script>
     <script src="assets/js/live-chat.js"></script>
 </body>
 </html>
