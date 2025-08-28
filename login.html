@@ -9,9 +9,26 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Google OAuth API -->
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://accounts.google.com/gsi/client" id="google-script" onload="console.log('Google API loaded')"></script>
     <!-- Facebook SDK -->
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+    <script>
+        // Function to initialize Google OAuth when the API is ready
+        function checkGoogleAPI() {
+            if (window.google && google.accounts) {
+                if (typeof initializeGoogleOAuth === 'function') {
+                    initializeGoogleOAuth();
+                }
+            } else {
+                setTimeout(checkGoogleAPI, 100);
+            }
+        }
+        
+        // Start checking for Google API
+        window.addEventListener('load', function() {
+            checkGoogleAPI();
+        });
+    </script>
 </head>
 <body>
     <!-- Header -->

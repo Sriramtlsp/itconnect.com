@@ -16,8 +16,12 @@ const GOOGLE_CLIENT_ID = '362739836838-5qns3eileb6s9e0bngiqis1fgspe8589.apps.goo
 
 // Initialize Google OAuth
 function initializeGoogleOAuth() {
+    console.log('Initializing Google OAuth...');
+    
     // Check if Google API is loaded and client ID is properly configured
-    if (typeof google !== 'undefined' && google.accounts) {
+    if (window.google && google.accounts && google.accounts.id) {
+        console.log('Google API is available');
+        
         // Check if client ID is properly configured
         if (!GOOGLE_CLIENT_ID || GOOGLE_CLIENT_ID.includes('YOUR_GOOGLE_CLIENT_ID_HERE')) {
             console.warn('Google OAuth client ID not configured. Using demo mode.');
@@ -26,6 +30,7 @@ function initializeGoogleOAuth() {
         }
         
         try {
+            console.log('Initializing Google OAuth with client ID:', GOOGLE_CLIENT_ID);
             google.accounts.id.initialize({
                 client_id: GOOGLE_CLIENT_ID,
                 callback: handleGoogleSignIn,
