@@ -10,16 +10,16 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Google OAuth Configuration
-// NOTE: This is a placeholder client ID. You need to replace this with your actual Google OAuth client ID
+// Replace this with your actual Google OAuth client ID from Google Cloud Console
 // Follow the setup guide in google-oauth-setup.md to get your client ID
-const GOOGLE_CLIENT_ID = '362739836838-5qns3eileb6s9e0bngiqis1fgspe8589.apps.googleusercontent.com'; // Replace with your actual client ID
+const GOOGLE_CLIENT_ID = '362739836838-5qns3eileb6s9e0bngiqis1fgspe8589.apps.googleusercontent.com';
 
 // Initialize Google OAuth
 function initializeGoogleOAuth() {
     // Check if Google API is loaded and client ID is properly configured
     if (typeof google !== 'undefined' && google.accounts) {
         // Check if client ID is properly configured
-        if (GOOGLE_CLIENT_ID === 'YOUR_GOOGLE_CLIENT_ID_HERE.apps.googleusercontent.com') {
+        if (!GOOGLE_CLIENT_ID || GOOGLE_CLIENT_ID.includes('YOUR_GOOGLE_CLIENT_ID_HERE')) {
             console.warn('Google OAuth client ID not configured. Using demo mode.');
             showNotification('Google Sign-In is not configured. Please use demo credentials or contact support.', 'warning');
             return;
