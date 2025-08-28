@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Rental Services - IT Connect | Rent High-Performance Laptops</title>
+    <meta name="description" content="Rent high-performance laptops for business, gaming, and professional use. Flexible rental plans, latest models, and technical support included.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/whatsapp-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <img src="assets/images/logo.jpg" alt="IT CONNECT - Professional Laptop Rental Services" class="brand-logo">
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="index.html#services" class="nav-link">Services</a></li>
+                    <li><a href="store.html" class="nav-link">Store</a></li>
+                    <li><a href="laptop-rental.html" class="nav-link active">Laptop Rental</a></li>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                    <li><a href="ai-diagnostics.html" class="nav-link">AI Diagnostics</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="login.html" class="btn btn-outline">
+                        <i class="fas fa-user"></i> Login
+                    </a>
+                    <div class="cart-icon">
+                        <a href="#" id="cartToggle">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
+                    <a href="tel:+9198847 45432" class="btn btn-primary">
+                        <i class="fas fa-phone"></i> Call Now
+                    </a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Laptop Rental Hero Section -->
+    <section id="rental-hero" class="hero">
+        <div class="hero-slider">
+            <!-- Slide 1 - Business Laptops -->
+            <div class="hero-slide active">
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h1>Premium Laptop Rentals <span class="highlight">For Every Need</span></h1>
+                            <p>Rent high-performance laptops for business, gaming, events, or temporary projects. Latest models with full technical support and flexible rental terms.</p>
+                            <div class="hero-cta">
+                                <a href="#rental-plans" class="btn btn-primary btn-lg">
+                                    <i class="fas fa-laptop"></i> Browse Laptops
+                                </a>
+                                <a href="https://wa.me/+918667018453" class="btn btn-secondary btn-lg" target="_blank">
+                                    <i class="fab fa-whatsapp"></i> Quick Quote
+                                </a>
+                            </div>
+                            <div class="hero-features">
+                                <div class="feature">
+                                    <i class="fas fa-shipping-fast"></i>
+                                    <span>Same-Day Delivery</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-tools"></i>
+                                    <span>Tech Support</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>Flexible Terms</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero-image">
+                            <img src="assets/images/laptop-rental-hero.jpg" alt="Premium laptop rental services">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 - Gaming Laptops -->
+            <div class="hero-slide">
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h1>High-Performance <span class="highlight">Gaming Laptops</span></h1>
+                            <p>Experience ultimate gaming with our premium gaming laptop rentals. RTX graphics, high refresh displays, and powerful processors for the best gaming experience.</p>
+                            <div class="hero-cta">
+                                <a href="#gaming-laptops" class="btn btn-primary btn-lg">
+                                    <i class="fas fa-gamepad"></i> Gaming Rentals
+                                </a>
+                                <a href="#rental-calculator" class="btn btn-secondary btn-lg">
+                                    <i class="fas fa-calculator"></i> Calculate Cost
+                                </a>
+                            </div>
+                            <div class="hero-features">
+                                <div class="feature">
+                                    <i class="fas fa-microchip"></i>
+                                    <span>RTX Graphics</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    <span>High Refresh Rate</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-headset"></i>
+                                    <span>Gaming Setup</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero-image">
+                            <img src="assets/images/gaming-laptop-rental.jpg" alt="Gaming laptop rental services">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 - Business Solutions -->
+            <div class="hero-slide">
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h1>Corporate Laptop <span class="highlight">Rental Solutions</span></h1>
+                            <p>Bulk laptop rentals for events, training sessions, temporary staff, and business projects. Professional setup, security software, and on-site support available.</p>
+                            <div class="hero-cta">
+                                <a href="#corporate-plans" class="btn btn-primary btn-lg">
+                                    <i class="fas fa-building"></i> Corporate Plans
+                                </a>
+                                <a href="tel:+9198847 45432" class="btn btn-secondary btn-lg">
+                                    <i class="fas fa-phone"></i> Bulk Inquiry
+                                </a>
+                            </div>
+                            <div class="hero-features">
+                                <div class="feature">
+                                    <i class="fas fa-users"></i>
+                                    <span>Bulk Discounts</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Security Setup</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-handshake"></i>
+                                    <span>On-site Support</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero-image">
+                            <img src="assets/images/corporate-laptop-rental.jpg" alt="Corporate laptop rental solutions">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider Navigation -->
+        <div class="hero-nav">
+            <button class="hero-prev" aria-label="Previous slide">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="hero-next" aria-label="Next slide">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <!-- Slider Dots -->
+        <div class="hero-dots">
+            <button class="hero-dot active" data-slide="0" aria-label="Go to slide 1"></button>
+            <button class="hero-dot" data-slide="1" aria-label="Go to slide 2"></button>
+            <button class="hero-dot" data-slide="2" aria-label="Go to slide 3"></button>
+        </div>
+    </section>
+
+    <!-- Rental Categories Section -->
+    <section id="rental-categories" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Laptop Rental Categories</h2>
+                <p>Choose from our wide range of laptop rental options</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Business Laptops</h3>
+                    <p>Professional laptops perfect for office work, presentations, and business applications.</p>
+                    <div class="service-price">Starting at ₹500/day</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>Gaming Laptops</h3>
+                    <p>High-performance gaming laptops with dedicated graphics cards and premium displays.</p>
+                    <div class="service-price">Starting at ₹1200/day</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>Creative Workstations</h3>
+                    <p>Powerful laptops for video editing, 3D rendering, graphic design, and creative work.</p>
+                    <div class="service-price">Starting at ₹1000/day</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Student Laptops</h3>
+                    <p>Affordable laptop rentals for students, online classes, and educational projects.</p>
+                    <div class="service-price">Starting at ₹300/day</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-calendar-week"></i>
+                    </div>
+                    <h3>Event Rentals</h3>
+                    <p>Bulk laptop rentals for conferences, training sessions, and corporate events.</p>
+                    <div class="service-price">Starting at ₹400/day</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Developer Laptops</h3>
+                    <p>High-spec laptops optimized for software development, coding, and programming.</p>
+                    <div class="service-price">Starting at ₹800/day</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Our Rental Service -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="section-header">
+                        <h2>Why Choose IT Connect Rentals?</h2>
+                        <p>Your trusted partner for laptop rental solutions</p>
+                    </div>
+                    <div class="about-description">
+                        <p>With over 23 years of experience in the IT industry, IT Connect offers premium laptop rental services with unmatched reliability and support. We understand your technology needs and provide solutions that keep your business running smoothly.</p>
+                        <p>Our extensive inventory includes the latest laptop models from top brands, all maintained to the highest standards and ready for immediate deployment.</p>
+                    </div>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Latest Models</h4>
+                                <p>Access to newest laptop models and configurations</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Flexible Terms</h4>
+                                <p>Daily, weekly, monthly, and long-term rental options</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>24/7 Support</h4>
+                                <p>Round-the-clock technical support and assistance</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Laptops Available</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">99%</div>
+                        <div class="stat-label">Uptime Guarantee</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">2Hr</div>
+                        <div class="stat-label">Delivery Time</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rental Process -->
+    <section class="ai-diagnostics">
+        <div class="container">
+            <div class="section-header">
+                <h2>Simple Rental Process</h2>
+                <p>Get your laptop rental in just 4 easy steps</p>
+            </div>
+            <div class="ai-diagnostics-content">
+                <div class="ai-diagnostics-text">
+                    <div class="ai-features">
+                        <div class="ai-feature">
+                            <div class="ai-feature-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="ai-feature-content">
+                                <h3>1. Browse & Select</h3>
+                                <p>Choose from our extensive catalog of laptops based on your requirements and budget.</p>
+                            </div>
+                        </div>
+                        <div class="ai-feature">
+                            <div class="ai-feature-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="ai-feature-content">
+                                <h3>2. Book & Schedule</h3>
+                                <p>Select your rental period and schedule delivery at your preferred time and location.</p>
+                            </div>
+                        </div>
+                        <div class="ai-feature">
+                            <div class="ai-feature-icon">
+                                <i class="fas fa-truck"></i>
+                            </div>
+                            <div class="ai-feature-content">
+                                <h3>3. Delivery & Setup</h3>
+                                <p>We deliver and set up your laptop with all necessary software and configurations.</p>
+                            </div>
+                        </div>
+                        <div class="ai-feature">
+                            <div class="ai-feature-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div class="ai-feature-content">
+                                <h3>4. Use & Return</h3>
+                                <p>Enjoy your rental with full support, then schedule pickup when your rental period ends.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ai-cta">
+                        <a href="#contact" class="btn btn-primary btn-lg">
+                            <i class="fas fa-rocket"></i> Start Rental Process
+                        </a>
+                        <div class="ai-stats">
+                            <div class="ai-stat">
+                                <strong>2 Hours</strong>
+                                <span>Delivery Time</span>
+                            </div>
+                            <div class="ai-stat">
+                                <strong>1000+</strong>
+                                <span>Happy Customers</span>
+                            </div>
+                            <div class="ai-stat">
+                                <strong>24/7</strong>
+                                <span>Support Available</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ai-diagnostics-visual">
+                    <div class="ai-brain-container">
+                        <div class="ai-brain-main">
+                            <i class="fas fa-laptop"></i>
+                            <div class="brain-pulse">
+                                <div class="pulse-ring"></div>
+                                <div class="pulse-ring"></div>
+                                <div class="pulse-ring"></div>
+                            </div>
+                        </div>
+                        <div class="ai-connections">
+                            <div class="connection-node" style="top: 20%; left: 10%;">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="connection-node" style="top: 30%; right: 15%;">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="connection-node" style="bottom: 25%; left: 20%;">
+                                <i class="fas fa-truck"></i>
+                            </div>
+                            <div class="connection-node" style="bottom: 20%; right: 10%;">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Rental Customers Say</h2>
+                <p>Real reviews from satisfied rental customers</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Needed 20 laptops for a corporate training session. IT Connect delivered on time with perfectly configured machines. Excellent service!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Rajesh Kumar</strong>
+                        <span>HR Manager, TechCorp</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Rented a gaming laptop for a month while mine was being repaired. Great performance and very reasonable pricing. Highly recommend!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Priya Sharma</strong>
+                        <span>Gaming Enthusiast</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Perfect solution for our startup. Got high-spec laptops without the upfront investment. Flexible terms and great support throughout."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Amit Patel</strong>
+                        <span>Startup Founder</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get Your Laptop Rental Quote</h2>
+                <p>Ready to rent? Contact us for a customized quote!</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p><a href="tel:+9198847 45432">+91 9884745432</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p><a href="mailto:rentals@itconnect.com">rentals@itconnect.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Service Area</h4>
+                            <p>5/11, Thiruvenkatam Street,<br>Adyar, Chennai, Tamil Nadu 600020</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Rental Hours</h4>
+                            <p>Mon-Fri: 9AM-8PM<br>Sat-Sun: 9AM-6PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="rentalForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                            <div class="validation-message" id="phoneValidation"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="laptop-type">Laptop Type Needed</label>
+                            <select id="laptop-type" name="laptop-type">
+                                <option value="">Select laptop type</option>
+                                <option value="business">Business Laptop</option>
+                                <option value="gaming">Gaming Laptop</option>
+                                <option value="creative">Creative Workstation</option>
+                                <option value="student">Student Laptop</option>
+                                <option value="event">Event/Bulk Rental</option>
+                                <option value="developer">Developer Laptop</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Quantity Needed</label>
+                            <select id="quantity" name="quantity">
+                                <option value="1">1 Laptop</option>
+                                <option value="2-5">2-5 Laptops</option>
+                                <option value="6-10">6-10 Laptops</option>
+                                <option value="11-20">11-20 Laptops</option>
+                                <option value="20+">20+ Laptops</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="rental-period">Rental Period</label>
+                            <select id="rental-period" name="rental-period">
+                                <option value="">Select rental period</option>
+                                <option value="daily">Daily (1-6 days)</option>
+                                <option value="weekly">Weekly (1-3 weeks)</option>
+                                <option value="monthly">Monthly (1-11 months)</option>
+                                <option value="long-term">Long-term (1+ years)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Additional Requirements *</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Please describe your specific requirements, software needs, delivery location, etc." required></textarea>
+                        </div>
+                        <button type="submit" data-phone="+91 9884745432" class="btn btn-primary btn-lg">
+                            <i class="fas fa-paper-plane"></i> Get Rental Quote
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><img src="assets/images/logo.jpg" alt="IT Connect Logo" class="footer-logo" style="height: 40px; width: auto;"> </h3>
+                    <p>Professional laptop rental services with delivery and support. Flexible terms, latest models, and reliable solutions for all your technology needs.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Repair Services</a></li>
+                        <li><a href="laptop-rental.html">Laptop Rental</a></li>
+                        <li><a href="store.html">Store</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Rental Categories</h4>
+                    <ul>
+                        <li><a href="#rental-categories">Business Laptops</a></li>
+                        <li><a href="#rental-categories">Gaming Laptops</a></li>
+                        <li><a href="#rental-categories">Creative Workstations</a></li>
+                        <li><a href="#rental-categories">Student Laptops</a></li>
+                        <li><a href="#rental-categories">Event Rentals</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Rental Terms</h4>
+                    <ul>
+                        <li><a href="#">Daily Rentals</a></li>
+                        <li><a href="#">Weekly Rentals</a></li>
+                        <li><a href="#">Monthly Rentals</a></li>
+                        <li><a href="#">Long-term Rentals</a></li>
+                        <li><a href="#">Bulk Discounts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +91 9884745432</p>
+                        <p><i class="fas fa-envelope"></i> rentals@itconnect.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Chennai Metro Area</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 IT Connect. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/whatsapp-manager.js"></script>
+    <script src="assets/js/live-chat.js"></script>
+</body>
+</html>

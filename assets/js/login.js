@@ -10,12 +10,21 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Google OAuth Configuration
-const GOOGLE_CLIENT_ID = '958075348409-9q8cm6daqu2uva9oq8jmt7nnssls88v2.apps.googleusercontent.com'; // Replace with your actual client ID
+// NOTE: This is a placeholder client ID. You need to replace this with your actual Google OAuth client ID
+// Follow the setup guide in google-oauth-setup.md to get your client ID
+const GOOGLE_CLIENT_ID = '362739836838-5qns3eileb6s9e0bngiqis1fgspe8589.apps.googleusercontent.com'; // Replace with your actual client ID
 
 // Initialize Google OAuth
 function initializeGoogleOAuth() {
-    // Check if Google API is loaded
+    // Check if Google API is loaded and client ID is properly configured
     if (typeof google !== 'undefined' && google.accounts) {
+        // Check if client ID is properly configured
+        if (GOOGLE_CLIENT_ID === 'YOUR_GOOGLE_CLIENT_ID_HERE.apps.googleusercontent.com') {
+            console.warn('Google OAuth client ID not configured. Using demo mode.');
+            showNotification('Google Sign-In is not configured. Please use demo credentials or contact support.', 'warning');
+            return;
+        }
+        
         try {
             google.accounts.id.initialize({
                 client_id: GOOGLE_CLIENT_ID,
@@ -26,10 +35,11 @@ function initializeGoogleOAuth() {
             console.log('Google OAuth initialized successfully');
         } catch (error) {
             console.error('Error initializing Google OAuth:', error);
-            showNotification('Error initializing Google login. Please try again later.', 'error');
+            showNotification('Error initializing Google login. Please use demo credentials or try again later.', 'error');
         }
     } else {
         console.warn('Google OAuth API not loaded. Using demo mode.');
+        showNotification('Google Sign-In API not available. Please use demo credentials.', 'info');
     }
 }
 

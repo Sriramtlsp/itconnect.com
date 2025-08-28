@@ -79,9 +79,9 @@ class ITConnectDatabase {
             },
             {
                 id: 3,
-                email: 'sarah.wilson@example.com',
-                password: 'sarah456',
-                firstName: 'Sarah',
+                email: 'Sriram.wilson@example.com',
+                password: 'Sriram456',
+                firstName: 'Sriram',
                 lastName: 'Wilson',
                 phone: '+91 9123456789',
                 role: 'customer',

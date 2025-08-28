@@ -8,8 +8,8 @@ class LiveChatWidget {
         this.isTyping = false;
         this.currentUser = this.getCurrentUser();
         this.supportAgents = [
-            { id: 1, name: 'Sarah', avatar: 'fas fa-user-circle', status: 'online' },
-            { id: 2, name: 'Mike', avatar: 'fas fa-user-circle', status: 'online' },
+            { id: 1, name: 'Sriram', avatar: 'fas fa-user-circle', status: 'online' },
+            { id: 2, name: 'Anand', avatar: 'fas fa-user-circle', status: 'online' },
             { id: 3, name: 'Priya', avatar: 'fas fa-user-circle', status: 'online' }
         ];
         this.currentAgent = this.supportAgents[0];
