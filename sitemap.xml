@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    
+    <!-- Homepage -->
+    <url>
+        <loc>https://itconnect.com/</loc>
+        <lastmod>2024-03-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://itconnect.com/assets/images/logo.jpg</image:loc>
+            <image:title>IT Connect - Professional Laptop Repair Services</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://itconnect.com/assets/images/laptop-repair-hero.jpg</image:loc>
+            <image:title>Professional Laptop Repair Service</image:title>
+        </image:image>
+    </url>
+    
+    <!-- Laptop Rental Page -->
+    <url>
+        <loc>https://itconnect.com/laptop-rental.html</loc>
+        <lastmod>2024-03-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- AI Diagnostics Page -->
+    <url>
+        <loc>https://itconnect.com/ai-diagnostics.html</loc>
+        <lastmod>2024-03-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Store Page -->
+    <url>
+        <loc>https://itconnect.com/store.html</loc>
+        <lastmod>2024-03-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Login Page -->
+    <url>
+        <loc>https://itconnect.com/login.html</loc>
+        <lastmod>2024-03-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <!-- Profile Page -->
+    <url>
+        <loc>https://itconnect.com/profile.html</loc>
+        <lastmod>2024-03-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    
+    <!-- Service History Page -->
+    <url>
+        <loc>https://itconnect.com/service-history.html</loc>
+        <lastmod>2024-03-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    
+    <!-- Support Tickets Page -->
+    <url>
+        <loc>https://itconnect.com/support-tickets.html</loc>
+        <lastmod>2024-03-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    
+    <!-- Track Order Page -->
+    <url>
+        <loc>https://itconnect.com/track-order.html</loc>
+        <lastmod>2024-03-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    
+    <!-- Checkout Page -->
+    <url>
+        <loc>https://itconnect.com/checkout.html</loc>
+        <lastmod>2024-03-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    
+    <!-- Blog Posts -->
+    <url>
+        <loc>https://itconnect.com/blog/laptop-overheating-solutions.html</loc>
+        <lastmod>2024-03-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://itconnect.com/assets/images/blog-overheating.jpg</image:loc>
+            <image:title>Laptop Overheating Solutions</image:title>
+        </image:image>
+    </url>
+    
+    <url>
+        <loc>https://itconnect.com/blog/improve-laptop-performance.html</loc>
+        <lastmod>2024-03-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://itconnect.com/assets/images/blog-performance.jpg</image:loc>
+            <image:title>Laptop Performance Improvement</image:title>
+        </image:image>
+    </url>
+    
+</urlset>

@@ -1,0 +1,25 @@
+{
+    "name": "IT Connect - Professional Laptop Repair Services",
+    "short_name": "IT Connect",
+    "description": "Expert laptop repair services with free home visits. Screen replacement, software fixes, hardware upgrades.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#CBF1F5",
+    "theme_color": "#2563eb",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "categories": ["business", "technology", "utilities"],
+    "lang": "en",
+    "dir": "ltr"
+}
