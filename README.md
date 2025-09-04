@@ -1,47 +1,69 @@
-# ITConnect - IT Support & Services
+# IT Connect - Professional Laptop Repair Services
 
 ## Overview
-ITConnect is a comprehensive IT support and services platform designed to connect users with IT professionals for various technical needs including laptop repair, diagnostics, and technical support.
+IT Connect is a professional laptop repair service provider offering comprehensive repair solutions at your doorstep. We specialize in hardware repairs, software fixes, and laptop rentals with a focus on quality service and customer satisfaction.
+
+## Services
+- **Laptop Repair**: Complete hardware and software repair services
+- **Home Service**: Convenient doorstep repair services
+- **Laptop Rental**: High-performance laptops for rent
+- **AI Diagnostics**: Advanced problem detection system
+- **Emergency Support**: 24/7 emergency repair services
+- **WhatsApp Integration**: Automated messaging and customer communication
 
 ## Features
+- Professional technicians
+- Genuine parts and components
+- Warranty on all repairs
+- Free home visits for diagnostics
+- Competitive pricing
+- Quick turnaround time
+- **NEW**: WhatsApp Business API integration for seamless communication
 
-### User Authentication
-- Regular login/registration system
-- Social login integration (Google, Facebook)
-- User profile management
+## Contact Information
+- **Phone**: +91 9884745432
+- **WhatsApp**: +91 8667018453
+- **Email**: info@itconnect.com
+- **Service Area**: Chennai Metro Area
 
-### IT Services
-- AI-powered diagnostics tool
-- Laptop repair services
-- Technical support ticketing system
-- Service history tracking
+## Website Structure
+- `index.html` - Homepage with services overview
+- `laptop-rental.html` - Laptop rental services
+- `ai-diagnostics.html` - AI-powered diagnostics tool
+- `store.html` - Parts and accessories store
+- `checkout.html` - Secure payment processing
+- `whatsapp-webhook.js` - WhatsApp Business API webhook server
+- `assets/` - CSS, JavaScript, and image files
 
-### E-commerce
-- IT products store
-- Secure checkout process
-- Order tracking
+## WhatsApp Integration Features
+- **Floating WhatsApp Widget**: Always-visible chat widget on all pages
+- **Automated Form Submissions**: Contact and booking forms send WhatsApp notifications
+- **Auto-Reply System**: Intelligent responses to common customer queries
+- **Service Booking Confirmations**: Automated booking confirmations via WhatsApp
+- **Quick Action Buttons**: Pre-defined messages for common services
+- **Real-time Notifications**: Instant alerts for new inquiries
 
-### Communication
-- Live chat support
-- WhatsApp integration
-- Support ticket system
+## Technologies Used
+- HTML5, CSS3, JavaScript
+- Node.js with Express.js (for WhatsApp webhook)
+- WhatsApp Business API
+- Responsive design
+- Font Awesome icons
+- Google Fonts
+- Modern CSS Grid and Flexbox
 
-## Technical Stack
-- Frontend: HTML, CSS, JavaScript
-- Local storage for data persistence
-- Social authentication APIs (Google OAuth, Facebook SDK)
+## Setup
 
-## Getting Started
+### Static Website
 1. Clone the repository
-2. Open index.html in your browser or use a local server
-3. For social login functionality, configure your OAuth credentials in the appropriate files
+2. Open `index.html` in a web browser
+3. No additional setup required for static website
 
-## Pages
-- Home (index.html)
-- Login/Registration (login.html)
-- User Profile (profile.html)
-- AI Diagnostics (ai-diagnostics.html)
-- Store (store.html)
+### WhatsApp Integration Setup
+1. Install Node.js dependencies:
+   ```bash
+   npm install
+   ```
 - Checkout (checkout.html)
 - Service History (service-history.html)
 - Support Tickets (support-tickets.html)

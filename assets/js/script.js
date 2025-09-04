@@ -1090,67 +1090,6 @@ function addComingSoonBadge(element, text = 'Coming Soon') {
     element.appendChild(badge);
 }
 
-// Function to create a coming soon section
-function createComingSoonSection() {
-    const section = document.createElement('section');
-    section.className = 'coming-soon-section';
-    section.innerHTML = `
-        <div class="container">
-            <h2>Exciting Features in Development</h2>
-            <p>We're constantly working to improve your experience with cutting-edge features</p>
-            
-            <div class="coming-soon-features">
-                <div class="coming-soon-feature-card">
-                    <i class="fas fa-mobile-alt"></i>
-                    <h4>Mobile App</h4>
-                    <p>Track your repairs, book services, and get real-time updates on your phone</p>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="--progress-width: 60%; width: 60%;"></div>
-                    </div>
-                    <small>60% Complete</small>
-                </div>
-                
-                <div class="coming-soon-feature-card">
-                    <i class="fas fa-robot"></i>
-                    <h4>AI Diagnostics</h4>
-                    <p>Advanced AI-powered diagnostics to identify issues before our technician arrives</p>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="--progress-width: 40%; width: 40%;"></div>
-                    </div>
-                    <small>40% Complete</small>
-                </div>
-                
-                <div class="coming-soon-feature-card">
-                    <i class="fas fa-comments"></i>
-                    <h4>Live Chat Support</h4>
-                    <p>Get instant help from our support team with integrated live chat</p>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="--progress-width: 80%; width: 80%;"></div>
-                    </div>
-                    <small>80% Complete</small>
-                </div>
-                
-                <div class="coming-soon-feature-card">
-                    <i class="fas fa-shipping-fast"></i>
-                    <h4>Advanced Tracking</h4>
-                    <p>Real-time GPS tracking of our technicians and detailed service progress</p>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="--progress-width: 70%; width: 70%;"></div>
-                    </div>
-                    <small>70% Complete</small>
-                </div>
-            </div>
-            
-            <div style="margin-top: 3rem;">
-                <button class="btn btn-primary btn-lg" onclick="comingSoonManager.showModal()">
-                    <i class="fas fa-bell"></i> Get Notified When Ready
-                </button>
-            </div>
-        </div>
-    `;
-    
-    return section;
-}
 
 // Auto-add coming soon badges to specific elements
 document.addEventListener('DOMContentLoaded', function() {
@@ -1161,18 +1100,9 @@ document.addEventListener('DOMContentLoaded', function() {
             addComingSoonBadge(link.parentElement, 'Soon');
         });
         
-        // Add coming soon section before footer if on main page
-        if (window.location.pathname === '/' || window.location.pathname.includes('index.html')) {
-            const footer = document.querySelector('.footer');
-            if (footer) {
-                const comingSoonSection = createComingSoonSection();
-                footer.parentNode.insertBefore(comingSoonSection, footer);
-            }
-        }
     }, 1000);
 });
 
 // Export for use in other scripts
 window.ComingSoonManager = ComingSoonManager;
 window.addComingSoonBadge = addComingSoonBadge;
-window.createComingSoonSection = createComingSoonSection;

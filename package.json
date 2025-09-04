@@ -1,0 +1,42 @@
+{
+  "name": "itconnect-whatsapp-api",
+  "version": "1.0.0",
+  "description": "WhatsApp Business API integration for IT Connect website",
+  "main": "whatsapp-webhook.js",
+  "scripts": {
+    "start": "node whatsapp-webhook.js",
+    "dev": "nodemon whatsapp-webhook.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "whatsapp",
+    "business-api",
+    "webhook",
+    "nodejs",
+    "express",
+    "itconnect"
+  ],
+  "author": "IT Connect",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "body-parser": "^1.20.2",
+    "crypto": "^1.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itconnect/whatsapp-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/itconnect/whatsapp-api/issues"
+  },
+  "homepage": "https://github.com/itconnect/whatsapp-api#readme"
+}

@@ -7,6 +7,7 @@
     <meta name="description" content="Professional laptop repair services with home visits. Screen replacement, software fixes, hardware upgrades. Fast, reliable, and affordable.">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/whatsapp-styles.css">
+    <link rel="stylesheet" href="assets/css/whatsapp-widget.css">
     <link rel="stylesheet" href="assets/css/booking.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -22,23 +23,13 @@
                 <ul class="nav-menu">
                     <li><a href="#home" class="nav-link">Home</a></li>
                     <li><a href="#services" class="nav-link">Services</a></li>
-                    <li><a href="store.html" class="nav-link">Store</a></li>
                     <li><a href="laptop-rental.html" class="nav-link">Laptop Rental</a></li>
                     <li><a href="#about" class="nav-link">About</a></li>
                     <li><a href="#blog" class="nav-link">Blog</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
-                    <li><a href="ai-diagnostics.html" class="nav-link">AI Diagnostics</a></li>
+                    <li><a href="ai-diagnostics.html" class="nav-link">Support</a></li>
                 </ul>
                 <div class="nav-cta">
-                    <a href="login.html" class="btn btn-outline">
-                        <i class="fas fa-user"></i> Login
-                    </a>
-                    <div class="cart-icon">
-                        <a href="#" id="cartToggle">
-                            <i class="fas fa-shopping-cart"></i>
-                            <span class="cart-count">0</span>
-                        </a>
-                    </div>
                     <a href="tel:+9198847 45432" class="btn btn-primary">
                         <i class="fas fa-phone"></i> Call Now
                     </a>
@@ -140,9 +131,12 @@
                                 <a href="tel:+9198847 45432" class="btn btn-primary btn-lg">
                                     <i class="fas fa-phone"></i> Emergency Call
                                 </a>
-                                <a href="login.html" class="btn btn-secondary btn-lg">
-                                    <i class="fas fa-user"></i> Customer Portal
+                                <a href="ai-diagnostics.html" class="btn btn-secondary btn-lg">
+                                    <i class="fas fa-brain"></i> AI Diagnostics
                                 </a>
+                                <button class="btn btn-whatsapp btn-lg" data-whatsapp="🚨 URGENT: I need emergency laptop repair! Please call me immediately. My laptop: [Brand/Model] - Issue: [Describe problem]">
+                                    <i class="fab fa-whatsapp"></i> WhatsApp Emergency
+                                </button>
                             </div>
                             <div class="hero-features">
                                 <div class="feature">
@@ -199,7 +193,6 @@
                     </div>
                     <h3>Screen Replacement</h3>
                     <p>Cracked or damaged screen? We replace all laptop screens with high-quality parts.</p>
-                    <div class="service-price">Starting at 4000rs</div>
                     <button class="btn btn-book" data-service="Screen Replacement" data-price="4000">Book Now</button>
                 </div>
                 <div class="service-card">
@@ -208,7 +201,6 @@
                     </div>
                     <h3>Keyboard Repair</h3>
                     <p>Sticky keys or non-responsive keyboard? We fix or replace laptop keyboards.</p>
-                    <div class="service-price">Starting at 750rs</div>
                     <button class="btn btn-book" data-service="Keyboard Repair" data-price="750">Book Now</button>
                 </div>
                 <div class="service-card">
@@ -217,7 +209,6 @@
                     </div>
                     <h3>Hardware Upgrades</h3>
                     <p>Boost performance with RAM upgrades, SSD installations, and component replacements.</p>
-                    <div class="service-price">Starting at 1000rs</div>
                     <button class="btn btn-book" data-service="Hardware Upgrades" data-price="1000">Book Now</button>
                 </div>
                 <div class="service-card">
@@ -226,7 +217,6 @@
                     </div>
                     <h3>Software Issues</h3>
                     <p>Virus removal, OS installation, software troubleshooting, and data recovery.</p>
-                    <div class="service-price">Starting at 1000rs</div>
                     <button class="btn btn-book" data-service="Software Issues" data-price="1000">Book Now</button>
                 </div>
                 <div class="service-card">
@@ -235,7 +225,6 @@
                     </div>
                     <h3>Battery Replacement</h3>
                     <p>Poor battery life? We replace laptop batteries with genuine or compatible parts.</p>
-                    <div class="service-price">Starting at 1000rs</div>
                     <button class="btn btn-book" data-service="Battery Replacement" data-price="1000">Book Now</button>
                 </div>
                 <div class="service-card">
@@ -244,7 +233,6 @@
                     </div>
                     <h3>Overheating Fix</h3>
                     <p>Laptop running hot? We clean fans, replace thermal paste, and fix cooling issues.</p>
-                    <div class="service-price">Starting at 750rs</div>
                     <button class="btn btn-book" data-service="Overheating Fix" data-price="750">Book Now</button>
                 </div>
             </div>
@@ -315,7 +303,7 @@
         </div>
     </div>
 
-    <!-- AI Diagnostics Section -->
+    <!-- Support Section -->
     <section id="ai-diagnostics" class="ai-diagnostics">
         <div class="container">
             <div class="section-header">
@@ -706,7 +694,7 @@
                     <h4>Coming Soon</h4>
                     <ul>
                         <li><a href="#" onclick="showNotification('Mobile App: Track repairs and book services on your phone!', 'info')">Mobile App <span class="coming-soon-badge"><i class="fas fa-clock"></i> Soon</span></a></li>
-                        <li><a href="#" onclick="showNotification('AI Diagnostics: Advanced problem detection before we arrive!', 'info')">AI Diagnostics <span class="coming-soon-badge"><i class="fas fa-clock"></i> Soon</span></a></li>
+                        <li><a href="#" onclick="showNotification('Support: Advanced problem detection before we arrive!', 'info')">Support <span class="coming-soon-badge"><i class="fas fa-clock"></i> Soon</span></a></li>
                         <li><a href="#" onclick="showNotification('Live Chat: Instant support when you need it!', 'info')">Live Chat Support <span class="coming-soon-badge"><i class="fas fa-clock"></i> Soon</span></a></li>
                         <li><a href="#" onclick="showNotification('Real-time Tracking: Follow your technician in real-time!', 'info')">Real-time Tracking <span class="coming-soon-badge"><i class="fas fa-clock"></i> Soon</span></a></li>
                     </ul>
@@ -730,5 +718,7 @@
     <script src="assets/js/database.js"></script>
     <script src="assets/js/booking.js"></script>
     <script src="assets/js/live-chat.js"></script>
+    <script src="assets/js/whatsapp-api.js"></script>
+    <script src="assets/js/whatsapp-integration.js"></script>
 </body>
 </html>
